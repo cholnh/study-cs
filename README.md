@@ -72,7 +72,7 @@
             </td>
             <td width="20%">
               <a href="https://github.com/cholnh/study-cs/blob/main/post/books/this-is-coding-test/index.md">
-                <img src="/assets/images/cs/tn-this-is-codingtest.png" width="100%" />
+                <img src="/assets/images/cs/tn-this-is-codingtest.jpg" width="100%" />
               </a>
             </td>
             <td width="20%">
@@ -87,7 +87,7 @@
             </td>
             <td width="20%">
               <a href="https://github.com/cholnh/study-cs/blob/main/post/books/software-security/index.md">
-                <img src="/assets/images/cs/tn-software-security.jpg" width="100%" />
+                <img src="/assets/images/cs/tn-software-security.gif" width="100%" />
               </a>
             </td>
         </tr>
