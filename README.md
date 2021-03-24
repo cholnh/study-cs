@@ -1,14 +1,24 @@
 ## Intro
 공부 내용 기록
 
+<br/>
+
+<br/>
+
+---
 
 ## Index
 - [책 기록](#책-기록)
 - [궁금증 기록](#궁금증-기록)
 
-## Contents
-### 책 기록
-#### 개발 서적
+<br/>
+
+<br/>
+
+---
+
+## 책 기록
+### 개발 서적
 <table>
     <tbody>
         <tr>
@@ -152,7 +162,7 @@
     </tbody>
 </table>
 
-#### 인문 서적
+### 인문 서적
 <table>
     <tbody>
         <tr>
@@ -286,11 +296,17 @@
     </tbody>
 </table>
 
-### 궁금증 기록
+<br/>
 
-#### [[ 공통 ]](https://github.com/cholnh/study-cs/blob/main/post/question/common/index.md)
+<br/>
 
-#### [[ 자바 ]](https://github.com/cholnh/study-cs/blob/main/post/question/java/index.md)
+---
+
+## 궁금증 기록
+
+### [[ 공통 ]](https://github.com/cholnh/study-cs/blob/main/post/question/common/index.md)
+
+### [[ 자바 ]](https://github.com/cholnh/study-cs/blob/main/post/question/java/index.md)
 - [String, StringBuffer, StringBuilder 차이](https://github.com/cholnh/study-cs/blob/main/post/question/java/index.md#string-stringbuffer-stringbuilder-차이)
 - [불변객체/가변객체](https://github.com/cholnh/study-cs/blob/main/post/question/java/index.md#불변객체가변객체)
 - [자바 메모리구조](https://github.com/cholnh/study-cs/blob/main/post/question/java/index.md#자바-메모리구조-heap-perm)
@@ -311,42 +327,42 @@
 - [Access Modifier](https://github.com/cholnh/study-cs/blob/main/post/question/java/index.md#access-modifier-접근-지정자)
 - [Wrapper class / First Collection Class](https://github.com/cholnh/study-cs/blob/main/post/question/java/index.md#wrapper-class--first-collection-class)
 
-#### [[ 디자인패턴 ]](https://github.com/cholnh/study-cs/blob/main/post/question/design-pattern/index.md)
+### [[ 디자인패턴 ]](https://github.com/cholnh/study-cs/blob/main/post/question/design-pattern/index.md)
 
-#### [[ 설계 ]](https://github.com/cholnh/study-cs/blob/main/post/question/architecture/index.md)
+### [[ 설계 ]](https://github.com/cholnh/study-cs/blob/main/post/question/architecture/index.md)
 
-#### [[ DB/JPA ]](https://github.com/cholnh/study-cs/blob/main/post/question/db/index.md)
+### [[ DB/JPA ]](https://github.com/cholnh/study-cs/blob/main/post/question/db/index.md)
 
-#### [[ 서버 ]](https://github.com/cholnh/study-cs/blob/main/post/question/server/index.md)
+### [[ 서버 ]](https://github.com/cholnh/study-cs/blob/main/post/question/server/index.md)
 
-#### [[ 스프링 ]](https://github.com/cholnh/study-cs/blob/main/post/question/spring/index.md)
+### [[ 스프링 ]](https://github.com/cholnh/study-cs/blob/main/post/question/spring/index.md)
 
-#### [[ 캐시 ]](https://github.com/cholnh/study-cs/blob/main/post/question/cache/index.md)
+### [[ 캐시 ]](https://github.com/cholnh/study-cs/blob/main/post/question/cache/index.md)
 
-#### [[ 네트워크 ]](https://github.com/cholnh/study-cs/blob/main/post/question/network/index.md)
+### [[ 네트워크 ]](https://github.com/cholnh/study-cs/blob/main/post/question/network/index.md)
 
-#### [[ 운영체제 ]](https://github.com/cholnh/study-cs/blob/main/post/question/os/index.md)
+### [[ 운영체제 ]](https://github.com/cholnh/study-cs/blob/main/post/question/os/index.md)
 
-#### [[ 알고리즘 ]](https://github.com/cholnh/study-cs/blob/main/post/question/algorithm/index.md)
+### [[ 알고리즘 ]](https://github.com/cholnh/study-cs/blob/main/post/question/algorithm/index.md)
 
-#### [[ 자료구조 ]](https://github.com/cholnh/study-cs/blob/main/post/question/data-structure/index.md)
+### [[ 자료구조 ]](https://github.com/cholnh/study-cs/blob/main/post/question/data-structure/index.md)
 
-#### [[ 빌드 도구 ]](https://github.com/cholnh/study-cs/blob/main/post/question/build-tool/index.md)
+### [[ 빌드 도구 ]](https://github.com/cholnh/study-cs/blob/main/post/question/build-tool/index.md)
 
-#### [[ OOP ]](https://github.com/cholnh/study-cs/blob/main/post/question/oop/index.md)
+### [[ OOP ]](https://github.com/cholnh/study-cs/blob/main/post/question/oop/index.md)
 
-#### [[ TDD ]](https://github.com/cholnh/study-cs/blob/main/post/question/tdd/index.md)
+### [[ TDD ]](https://github.com/cholnh/study-cs/blob/main/post/question/tdd/index.md)
 
-#### [[ DDD ]](https://github.com/cholnh/study-cs/blob/main/post/question/ddd/index.md)
+### [[ DDD ]](https://github.com/cholnh/study-cs/blob/main/post/question/ddd/index.md)
 
-#### [[ MSA ]](https://github.com/cholnh/study-cs/blob/main/post/question/msa/index.md)
+### [[ MSA ]](https://github.com/cholnh/study-cs/blob/main/post/question/msa/index.md)
 
-#### [[ 보안 ]](https://github.com/cholnh/study-cs/blob/main/post/question/security/index.md)
+### [[ 보안 ]](https://github.com/cholnh/study-cs/blob/main/post/question/security/index.md)
 
-#### [[ CI/CD ]](https://github.com/cholnh/study-cs/blob/main/post/question/cicd/index.md)
+### [[ CI/CD ]](https://github.com/cholnh/study-cs/blob/main/post/question/cicd/index.md)
 
-#### [[ SCM ]](https://github.com/cholnh/study-cs/blob/main/post/question/scm/index.md)
+### [[ SCM ]](https://github.com/cholnh/study-cs/blob/main/post/question/scm/index.md)
 
-#### [[ 프로젝트 ]](https://github.com/cholnh/study-cs/blob/main/post/question/project/index.md)
+### [[ 프로젝트 ]](https://github.com/cholnh/study-cs/blob/main/post/question/project/index.md)
 
 [ [↑ top](https://github.com/cholnh/study-cs/blob/main/post/question/architecture/index.md#설계) ]
