@@ -16,10 +16,18 @@
 - 충돌 처리 알고리즘   
 hash function으로 index를 구할 때 중복 index가 생성되는 것을 충돌이라 한다.
 
+[ [← back](https://github.com/cholnh/study-cs#-자료구조-) | [↑ top](https://github.com/cholnh/study-cs/blob/main/post/question/data-structure/index.md#자료구조) ]
+
+<br/>
+
 ## Separate Chaining 방식 해결 (JDK 내부에서 사용중)
 - index 끝부분이 -> Linked List (참조)
 - 충돌시, List 맨 뒤에 추가 (List 선형검색)
 > cf) jdk 1.8 의 경우 노드 8개 이하 : List 사용, 8개 이상 Tree 사용 (select 성능을 높임)
+
+[ [← back](https://github.com/cholnh/study-cs#-자료구조-) | [↑ top](https://github.com/cholnh/study-cs/blob/main/post/question/data-structure/index.md#자료구조) ]
+
+<br/>
 
 ## Open Addressing 방식 해결
 - 해시 테이블(buckets) 빈 공간을 활용하는 방식
@@ -29,6 +37,10 @@ hash function으로 index를 구할 때 중복 index가 생성되는 것을 충�
 - Resizing  
 버킷의 사이즈가 작으면 Open Addressing 방식이든, Separate Chaining 방식이든 검색 성능이 저하 됨.  
 리사이징을 통해 새로운 버킷을 생성해야 성능 향상.
+
+[ [← back](https://github.com/cholnh/study-cs#-자료구조-) | [↑ top](https://github.com/cholnh/study-cs/blob/main/post/question/data-structure/index.md#자료구조) ]
+
+<br/>
 
 ## 자바 HashMap (자바는 Amortized Constant Time을 위해 어떻게 해시 충돌 가능성을 줄이는가?)
 - 자바 컬렉션 프레임워크 Map 인터페이스의 구현체.
@@ -53,9 +65,21 @@ static int hashCode(String key) {
 }
 ```
 
+[ [← back](https://github.com/cholnh/study-cs#-자료구조-) | [↑ top](https://github.com/cholnh/study-cs/blob/main/post/question/data-structure/index.md#자료구조) ]
+
+<br/>
+
 ## 바이너리 트리
 
+[ [← back](https://github.com/cholnh/study-cs#-자료구조-) | [↑ top](https://github.com/cholnh/study-cs/blob/main/post/question/data-structure/index.md#자료구조) ]
+
+<br/>
+
 ## BST (Binary Search Tree)
+
+[ [← back](https://github.com/cholnh/study-cs#-자료구조-) | [↑ top](https://github.com/cholnh/study-cs/blob/main/post/question/data-structure/index.md#자료구조) ]
+
+<br/>
 
 ## Graph
 
