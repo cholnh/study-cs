@@ -9,8 +9,8 @@
 ## Contents
 ### 책 기록
 #### 개발 서적
-<table>
-    <tbody text-align="center">
+<table text-align="center">
+    <tbody>
         <tr>
             <td width="20%">
               <a href="https://github.com/cholnh/study-cs/blob/main/post/books/cleancode/index.md">
@@ -153,8 +153,8 @@
 </table>
 
 #### 인문 서적
-<table>
-    <tbody text-align="center">
+<table text-align="center">
+    <tbody>
         <tr>
             <td width="20%">
                 <img src="/assets/images/etc/tn-리더-마스터링.jpg" width="100%" />
