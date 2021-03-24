@@ -98,24 +98,16 @@
                 </a>
             </td>
             <td width="20%">
-              <a href="https://github.com/cholnh/study-cs/blob/main/post/books/this-is-coding-test/index.md">
                 이것이 코딩 테스트다
-              </a>
             </td>
             <td width="20%">
-              <a href="https://github.com/cholnh/study-cs/blob/main/post/books/vue-js/index.md">
                 Vue.js 입문
-              </a>
             </td>
             <td width="20%">
-              <a href="https://github.com/cholnh/study-cs/blob/main/post/books/soft-skill/index.md">
                 소프트 스킬
-              </a>
             </td>
             <td width="20%">
-              <a href="https://github.com/cholnh/study-cs/blob/main/post/books/software-security/index.md">
                 소프트웨어 보안
-              </a>
             </td>
         </tr>
         <tr>
@@ -141,14 +133,10 @@
         </tr>
         <tr>
             <td width="20%">
-                <a href="https://github.com/cholnh/study-cs/blob/main/post/books/os/index.md">
                     운영체제
-                </a>
             </td>
             <td width="20%">
-              <a href="https://github.com/cholnh/study-cs/blob/main/post/books/ai/index.md">
                 인공지능
-              </a>
             </td>
             <td width="20%">
               <a href="https://github.com/cholnh/study-cs/blob/main/post/books/java/index.md">
