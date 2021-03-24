@@ -31,6 +31,15 @@
 
 
 ## 불변객체/가변객체
+- 불변 객체 Immutable object  
+생성 후 그 상태를 바꿀 수 없는 객체
+- 가변 객체 mutable object  
+생성 후에도 상태를 변경할 수 있는 객체
+- 이점  
+복제나 비교를 위한 조작을 단순화, 성능 개선
+- (스택 영역에 있는)불변 객체가 가리키고 있는 (힙 영역에 있는)데이터 자체의 변화 불가능
+> cf) **실제 데이터**는 힙 영역에 저장  
+> 힙 영역을 가리키는 주소 값은 Stack 영역에서 가지고 있음
 
 ## 자바 메모리구조 (heap, perm)
 
@@ -65,6 +74,21 @@
 ## Generic
 
 ## final
+- 참조 타입에서 변수의 재할당만을 금지하는 키워드
+- 참조 타입에서의 불변 주의사항 (아래 코드 참조)
+
+```java
+public class FirstClassCollection {
+    private final List<Object> list;
+
+    public FirstClassCollection(List<Object> list) {
+        this.list = list;
+    }
+}
+```
+
+> 위와 같이 `List`를 `final`로 씌워도 `add()` 사용이 가능하다.(내부 인스턴스의 변경)  
+> 완전한 불변객체로 만들기 위해서는 `setter`제거, `getter`반환 값을 `Collections.unmodifiableList()` 사용하여 반환.  
 
 ## 오버로딩 vs 오버라이딩
 
