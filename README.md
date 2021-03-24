@@ -341,10 +341,21 @@
 ---
 
 ### [[ 설계 ]](https://github.com/cholnh/study-cs/blob/main/post/question/architecture/index.md)
+- [RESTful API](https://github.com/cholnh/study-cs/blob/main/post/question/architecture/index.md#restful-api)
 
 ---
 
 ### [[ DB/JPA ]](https://github.com/cholnh/study-cs/blob/main/post/question/db/index.md)
+- [NoSQL](https://github.com/cholnh/study-cs/blob/main/post/question/db/index.md#nosql)
+- [데이터베이스 리플리케이션](https://github.com/cholnh/study-cs/blob/main/post/question/db/index.md#데이터베이스-리플리케이션)
+- [데이터베이스 파티셔닝](https://github.com/cholnh/study-cs/blob/main/post/question/db/index.md#데이터베이스-파티셔닝)
+- [ACID](https://github.com/cholnh/study-cs/blob/main/post/question/db/index.md#acid)
+- [Statement vs PreparedStatement](https://github.com/cholnh/study-cs/blob/main/post/question/db/index.md#statement-vs-preparedstatement)
+- [Transaction](https://github.com/cholnh/study-cs/blob/main/post/question/db/index.md#transaction)
+- [정규화](https://github.com/cholnh/study-cs/blob/main/post/question/db/index.md#정규화)
+- [Index](https://github.com/cholnh/study-cs/blob/main/post/question/db/index.md#index)
+- [데이터베이스 성능](https://github.com/cholnh/study-cs/blob/main/post/question/db/index.md#데이터베이스-성능)
+- [jpa 는 어떻게 트랜잭션을 관리할까](https://github.com/cholnh/study-cs/blob/main/post/question/db/index.md#jpa-는-어떻게-트랜잭션을-관리할까)
 
 ---
 
@@ -353,6 +364,9 @@
 ---
 
 ### [[ 스프링 ]](https://github.com/cholnh/study-cs/blob/main/post/question/spring/index.md)
+- [제어 반전 (Inversion of control)](https://github.com/cholnh/study-cs/blob/main/post/question/spring/index.md#제어-반전-inversion-of-control)
+- [의존 관계 역전 원칙 (from SOLID)](https://github.com/cholnh/study-cs/blob/main/post/question/spring/index.md#의존-관계-역전-원칙-from-solid)
+- [의존성 주입 (Dependency Injection)](https://github.com/cholnh/study-cs/blob/main/post/question/spring/index.md#의존성-주입-dependency-injection)
 
 ---
 
@@ -361,6 +375,17 @@
 ---
 
 ### [[ 네트워크 ]](https://github.com/cholnh/study-cs/blob/main/post/question/network/index.md)
+- [OSI 7 layer](https://github.com/cholnh/study-cs/blob/main/post/question/network/index.md#osi-7-layer)
+- [HTTP/1.0](https://github.com/cholnh/study-cs/blob/main/post/question/network/index.md#http10)
+- [HTTP/1.1](https://github.com/cholnh/study-cs/blob/main/post/question/network/index.md#http11)
+- [HTTP/2](https://github.com/cholnh/study-cs/blob/main/post/question/network/index.md#http2)
+- [HTTPS](https://github.com/cholnh/study-cs/blob/main/post/question/network/index.md#https)
+- [Cookie / Session](https://github.com/cholnh/study-cs/blob/main/post/question/network/index.md#cookie--session)
+- [GET / POST / PUT / PATCH / DELETE](https://github.com/cholnh/study-cs/blob/main/post/question/network/index.md#get--post--put--patch--delete)
+- [TCP VS UDP](https://github.com/cholnh/study-cs/blob/main/post/question/network/index.md#tcp-vs-udp)
+- [TCP 3-way-handshake](https://github.com/cholnh/study-cs/blob/main/post/question/network/index.md#tcp-3-way-handshake)
+- [DNS round robin](https://github.com/cholnh/study-cs/blob/main/post/question/network/index.md#dns-round-robin)
+- [웹 통신 흐름](https://github.com/cholnh/study-cs/blob/main/post/question/network/index.md#웹-통신-흐름)
 
 ---
 

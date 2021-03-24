@@ -1,26 +1,38 @@
 ## 네트워크
+- [OSI 7 layer](#osi-7-layer)
+- [HTTP/1.0](#http10)
+- [HTTP/1.1](#http11)
+- [HTTP/2](#http2)
+- [HTTPS](#https)
+- [Cookie / Session](#cookie--session)
+- [GET / POST / PUT / PATCH / DELETE](#get--post--put--patch--delete)
+- [TCP VS UDP](#tcp-vs-udp)
+- [TCP 3-way-handshake](#tcp-3-way-handshake)
+- [DNS round robin](#dns-round-robin)
+- [웹 통신 흐름](#웹-통신-흐름)
+
 [ [← back](https://github.com/cholnh/study-cs#-네트워크-) ]
 
-### OSI 7 layer
+## OSI 7 layer
 
-### HTTP/1.0
+## HTTP/1.0
 
-### HTTP/1.1
+## HTTP/1.1
 
-### HTTP/2
+## HTTP/2
 
-### HTTPS
+## HTTPS
 
-### Cookie / Session
+## Cookie / Session
 
-### GET / POST / PUT / PATCH / DELETE
+## GET / POST / PUT / PATCH / DELETE
 
-### TCP VS UDP
+## TCP VS UDP
 
-### TCP 3-way-handshake
+## TCP 3-way-handshake
 
-### DNS round robin
+## DNS round robin
 
-### 웹 통신 흐름
+## 웹 통신 흐름
 
 [ [← back](https://github.com/cholnh/study-cs#-네트워크-) | [↑ top](https://github.com/cholnh/study-cs/blob/main/post/question/network/index.md#네트워크) ]
