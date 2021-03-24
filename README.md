@@ -64,7 +64,6 @@
               </a>
             </td>
         </tr>
-        
         <tr>
             <td width="20%">
               <a href="https://github.com/cholnh/study-cs/blob/main/post/books/regexp/index.md">
