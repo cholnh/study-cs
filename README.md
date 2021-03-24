@@ -8,6 +8,7 @@
 
 ## Contents
 ### 책 기록
+#### 개발 서적
 <table>
     <tbody text-align="center">
         <tr>
@@ -142,6 +143,140 @@
               <a href="https://github.com/cholnh/study-cs/blob/main/post/books/java/index.md">
                 자바의 정석
               </a>
+            </td>
+            <td width="20%">
+            </td>
+            <td width="20%">
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+#### 인문 서적
+<table>
+    <tbody text-align="center">
+        <tr>
+            <td width="20%">
+                <img src="/assets/images/cs/tn-리더-마스터링.jpg" width="100%" />
+          	</td>
+            <td width="20%">
+                <img src="/assets/images/cs/tn-사업을-키운다는것.jpg" width="100%" />
+          	</td>
+            <td width="20%">
+                <img src="/assets/images/cs/tn-장인.jpg" width="100%" />
+          	</td>
+            <td width="20%">
+                <img src="/assets/images/cs/tn-인코그니토.jpg" width="100%" />
+          	</td>
+          	<td width="20%">
+                <img src="/assets/images/cs/tn-아직도-가야할길.jpg" width="100%" />
+            </td>
+        </tr>
+        <tr>
+            <td width="20%">
+                리더 마스터링
+            </td>
+            <td width="20%">
+                사업을 키운다는 것
+            </td>
+            <td width="20%">
+                장인
+            </td>
+            <td width="20%">
+                인코그니토
+            </td>
+            <td width="20%">
+                아직도 가야 할 길
+            </td>
+        </tr>
+        <tr>
+            <td width="20%">
+                <img src="/assets/images/cs/tn-최고의공부.jpg" width="100%" />
+          	</td>
+            <td width="20%">
+                <img src="/assets/images/cs/tn-총균쇠.jpg" width="100%" />
+          	</td>
+            <td width="20%">
+                <img src="/assets/images/cs/tn-메모의기술.jpg" width="100%" />
+          	</td>
+            <td width="20%">
+                <img src="/assets/images/cs/tn-참으수-없는-존재의-가벼움.jpg" width="100%" />
+          	</td>
+          	<td width="20%">
+                <img src="/assets/images/cs/tn-제노사이드.jpg" width="100%" />
+            </td>
+        </tr>
+        <tr>
+            <td width="20%">
+                최고의 공부
+            </td>
+            <td width="20%">
+                총 균 쇠
+            </td>
+            <td width="20%">
+                메모의 기술
+            </td>
+            <td width="20%">
+                참을 수 없는 존재의 가벼움
+            </td>
+            <td width="20%">
+                제노사이드
+            </td>
+        </tr>
+        <tr>
+            <td width="20%">
+                <img src="/assets/images/cs/tn-개츠비.jpg" width="100%" />
+          	</td>
+            <td width="20%">
+                <img src="/assets/images/cs/tn-나무위의남작.jpg" width="100%" />
+          	</td>
+            <td width="20%">
+                <img src="/assets/images/cs/tn-지금-외롭다면.jpg" width="100%" />
+          	</td>
+            <td width="20%">
+                <img src="/assets/images/cs/tn-모래의여자.jpg" width="100%" />
+          	</td>
+          	<td width="20%">
+                <img src="/assets/images/cs/tn-13계단.jpg" width="100%" />
+            </td>
+        </tr>
+        <tr>
+            <td width="20%">
+                위대한 개츠비
+            </td>
+            <td width="20%">
+                나무 위의 남작
+            </td>
+            <td width="20%">
+                지금 외롭다면 잘되고 있는것이다
+            </td>
+            <td width="20%">
+                모래의 여자
+            </td>
+            <td width="20%">
+                13계단
+            </td>
+        </tr>
+        <tr>
+            <td width="20%">
+                <img src="/assets/images/cs/tn-템페스트.jpg" width="100%" />
+          	</td>
+            <td width="20%">
+          	</td>
+            <td width="20%">
+          	</td>
+            <td width="20%">
+          	</td>
+          	<td width="20%">
+            </td>
+        </tr>
+        <tr>
+            <td width="20%">
+                템페스트
+            </td>
+            <td width="20%">
+            </td>
+            <td width="20%">
             </td>
             <td width="20%">
             </td>
