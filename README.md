@@ -12,7 +12,9 @@
     <tbody text-align="center">
         <tr>
             <td width="20%">
-              <img src="/assets/images/cs/tn-cleancode.jpg" width="100%" />
+              <a href="https://github.com/cholnh/study-cs/post/books/cleancode/clean-code.md">
+                <img src="/assets/images/cs/tn-cleancode.jpg" width="100%" />
+              </a>
           	</td>
             <td width="20%">
               <img src="/assets/images/cs/tn-ttd-oop.png" width="100%" />
@@ -29,7 +31,9 @@
         </tr>
         <tr>
             <td width="20%">
-              클린코드
+                <a href="https://github.com/cholnh/study-cs/post/books/cleancode/clean-code.md">
+                    클린코드
+                </a>
             </td>
             <td width="20%">
               테스트 주도 개발로 배우는 객체지향 설계와 실천
