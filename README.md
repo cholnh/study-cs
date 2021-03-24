@@ -288,9 +288,28 @@
 
 ### 궁금증 기록
 
-#### - [[ 공통 ]](https://github.com/cholnh/study-cs/blob/main/post/question/common/index.md)
+#### [[ 공통 ]](https://github.com/cholnh/study-cs/blob/main/post/question/common/index.md)
 
 #### [[ 자바 ]](https://github.com/cholnh/study-cs/blob/main/post/question/java/index.md)
+- [String, StringBuffer, StringBuilder 차이](https://github.com/cholnh/study-cs/blob/main/post/question/java/index.md#string-stringbuffer-stringbuilder-차이)
+- [불변객체/가변객체](https://github.com/cholnh/study-cs/blob/main/post/question/java/index.md#불변객체가변객체)
+- [자바 메모리구조](https://github.com/cholnh/study-cs/blob/main/post/question/java/index.md#자바-메모리구조-heap-perm)
+    + heap
+    + perm
+- [volatile](https://github.com/cholnh/study-cs/blob/main/post/question/java/index.md#volatile)
+- [serialize](https://github.com/cholnh/study-cs/blob/main/post/question/java/index.md#serialize-직렬화)
+- [transient](https://github.com/cholnh/study-cs/blob/main/post/question/java/index.md#transient)
+- [추상 클래스](https://github.com/cholnh/study-cs/blob/main/post/question/java/index.md#추상-클래스)
+- [인터페이스](https://github.com/cholnh/study-cs/blob/main/post/question/java/index.md#인터페이스)
+- [JVM / GC](https://github.com/cholnh/study-cs/blob/main/post/question/java/index.md#jvm--gc)
+- [Class Loader](https://github.com/cholnh/study-cs/blob/main/post/question/java/index.md#class-loader)
+- [Collection](https://github.com/cholnh/study-cs/blob/main/post/question/java/index.md#collection)
+- [Annotation](https://github.com/cholnh/study-cs/blob/main/post/question/java/index.md#annotation)
+- [Generic](https://github.com/cholnh/study-cs/blob/main/post/question/java/index.md#generic)
+- [final](https://github.com/cholnh/study-cs/blob/main/post/question/java/index.md#final)
+- [오버로딩 vs 오버라이딩](https://github.com/cholnh/study-cs/blob/main/post/question/java/index.md#오버로딩-vs-오버라이딩)
+- [Access Modifier](https://github.com/cholnh/study-cs/blob/main/post/question/java/index.md#access-modifier-접근-지정자)
+- [Wrapper class / First Collection Class](https://github.com/cholnh/study-cs/blob/main/post/question/java/index.md#wrapper-class--first-collection-class)
 
 #### [[ 디자인패턴 ]](https://github.com/cholnh/study-cs/blob/main/post/question/design-pattern/index.md)
 
