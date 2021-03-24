@@ -1,4 +1,5 @@
 ## 자바
+[ [← back](https://github.com/cholnh/study-cs#-자바-) ]
 
 ### String, StringBuffer, StringBuilder 차이
 - String은 불변객체이다. -> 새로운 값을 append 할 때 마다 새로운 객체가 생성 -> 가비지 증가로 인한 힙메모리 부족 -> GC빈도 증가 (메모리, 성능 비효율)
@@ -50,3 +51,5 @@ serialVersionUID 이 동일해야 역/직렬화 가능, 또한 구조가 변하�
 ### Access Modifier (접근 지정자)
 
 ### Wrapper class / First Collection Class
+
+[ [← back](https://github.com/cholnh/study-cs#-자바-) | [↑ top](https://github.com/cholnh/study-cs/blob/main/post/question/java/index.md#자바) ]

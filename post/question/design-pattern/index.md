@@ -1,4 +1,6 @@
 ## 디자인 패턴
+[ [← back](https://github.com/cholnh/study-cs#-디자인패턴-) ]
+
 ### SOLID
 
 ### 함수형 프로그래밍
@@ -30,3 +32,5 @@
 ### 인터프리터 패턴
 
 ### Publish-Subscribe 패턴
+
+[ [← back](https://github.com/cholnh/study-cs#-디자인패턴-) | [↑ top](https://github.com/cholnh/study-cs/blob/main/post/question/design-pattern/index.md#디자인-패턴) ]
