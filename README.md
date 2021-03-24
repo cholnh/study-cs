@@ -200,7 +200,7 @@
                 <img src="/assets/images/etc/tn-메모의기술.jpg" width="100%" />
           	</td>
             <td width="20%">
-                <img src="/assets/images/etc/tn-참으수-없는-존재의-가벼움.jpg" width="100%" />
+                <img src="/assets/images/etc/tn-참을수-없는-존재의-가벼움.jpg" width="100%" />
           	</td>
           	<td width="20%">
                 <img src="/assets/images/etc/tn-제노사이드.jpg" width="100%" />
