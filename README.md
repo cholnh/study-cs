@@ -118,6 +118,48 @@
               </a>
             </td>
         </tr>
+        <tr>
+            <td width="20%">
+              <a href="https://github.com/cholnh/study-cs/blob/main/post/books/os/index.md">
+                <img src="/assets/images/cs/tn-os.jpg" width="100%" />
+              </a>
+            </td>
+            <td width="20%">
+              <a href="https://github.com/cholnh/study-cs/blob/main/post/books/ai/index.md">
+                <img src="/assets/images/cs/tn-ai.jpg" width="100%" />
+              </a>
+            </td>
+            <td width="20%">
+              <a href="https://github.com/cholnh/study-cs/blob/main/post/books/java/index.md">
+                <img src="/assets/images/cs/tn-java.jpg" width="100%" />
+              </a>
+            </td>
+            <td width="20%">
+            </td>
+            <td width="20%">
+            </td>
+        </tr>
+        <tr>
+            <td width="20%">
+                <a href="https://github.com/cholnh/study-cs/blob/main/post/books/os/index.md">
+                    운영체제
+                </a>
+            </td>
+            <td width="20%">
+              <a href="https://github.com/cholnh/study-cs/blob/main/post/books/ai/index.md">
+                인공지능
+              </a>
+            </td>
+            <td width="20%">
+              <a href="https://github.com/cholnh/study-cs/blob/main/post/books/java/index.md">
+                자바의 정석
+              </a>
+            </td>
+            <td width="20%">
+            </td>
+            <td width="20%">
+            </td>
+        </tr>
     </tbody>
 </table>
 
