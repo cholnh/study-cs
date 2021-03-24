@@ -157,19 +157,19 @@
     <tbody text-align="center">
         <tr>
             <td width="20%">
-                <img src="/assets/images/cs/tn-리더-마스터링.jpg" width="100%" />
+                <img src="/assets/images/etc/tn-리더-마스터링.jpg" width="100%" />
           	</td>
             <td width="20%">
-                <img src="/assets/images/cs/tn-사업을-키운다는것.jpg" width="100%" />
+                <img src="/assets/images/etc/tn-사업을-키운다는것.jpg" width="100%" />
           	</td>
             <td width="20%">
-                <img src="/assets/images/cs/tn-장인.jpg" width="100%" />
+                <img src="/assets/images/etc/tn-장인.jpg" width="100%" />
           	</td>
             <td width="20%">
-                <img src="/assets/images/cs/tn-인코그니토.jpg" width="100%" />
+                <img src="/assets/images/etc/tn-인코그니토.jpg" width="100%" />
           	</td>
           	<td width="20%">
-                <img src="/assets/images/cs/tn-아직도-가야할길.jpg" width="100%" />
+                <img src="/assets/images/etc/tn-아직도-가야할길.jpg" width="100%" />
             </td>
         </tr>
         <tr>
@@ -191,19 +191,19 @@
         </tr>
         <tr>
             <td width="20%">
-                <img src="/assets/images/cs/tn-최고의공부.jpg" width="100%" />
+                <img src="/assets/images/etc/tn-최고의공부.jpg" width="100%" />
           	</td>
             <td width="20%">
-                <img src="/assets/images/cs/tn-총균쇠.jpg" width="100%" />
+                <img src="/assets/images/etc/tn-총균쇠.jpg" width="100%" />
           	</td>
             <td width="20%">
-                <img src="/assets/images/cs/tn-메모의기술.jpg" width="100%" />
+                <img src="/assets/images/etc/tn-메모의기술.jpg" width="100%" />
           	</td>
             <td width="20%">
-                <img src="/assets/images/cs/tn-참으수-없는-존재의-가벼움.jpg" width="100%" />
+                <img src="/assets/images/etc/tn-참으수-없는-존재의-가벼움.jpg" width="100%" />
           	</td>
           	<td width="20%">
-                <img src="/assets/images/cs/tn-제노사이드.jpg" width="100%" />
+                <img src="/assets/images/etc/tn-제노사이드.jpg" width="100%" />
             </td>
         </tr>
         <tr>
@@ -225,19 +225,19 @@
         </tr>
         <tr>
             <td width="20%">
-                <img src="/assets/images/cs/tn-개츠비.jpg" width="100%" />
+                <img src="/assets/images/etc/tn-개츠비.jpg" width="100%" />
           	</td>
             <td width="20%">
-                <img src="/assets/images/cs/tn-나무위의남작.jpg" width="100%" />
+                <img src="/assets/images/etc/tn-나무위의남작.jpg" width="100%" />
           	</td>
             <td width="20%">
-                <img src="/assets/images/cs/tn-지금-외롭다면.jpg" width="100%" />
+                <img src="/assets/images/etc/tn-지금-외롭다면.jpg" width="100%" />
           	</td>
             <td width="20%">
-                <img src="/assets/images/cs/tn-모래의여자.jpg" width="100%" />
+                <img src="/assets/images/etc/tn-모래의여자.jpg" width="100%" />
           	</td>
           	<td width="20%">
-                <img src="/assets/images/cs/tn-13계단.jpg" width="100%" />
+                <img src="/assets/images/etc/tn-13계단.jpg" width="100%" />
             </td>
         </tr>
         <tr>
@@ -259,7 +259,7 @@
         </tr>
         <tr>
             <td width="20%">
-                <img src="/assets/images/cs/tn-템페스트.jpg" width="100%" />
+                <img src="/assets/images/etc/tn-템페스트.jpg" width="100%" />
           	</td>
             <td width="20%">
           	</td>
