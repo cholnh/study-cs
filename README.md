@@ -288,105 +288,15 @@
 
 ### 궁금증 기록
 
-#### [ 프로젝트 ]
-- 원래의 목적에 맞게 기술을 사용하고 있는가
-- 대체할 수 있는 다른 기술들
+#### [[ 공통 ]](https://github.com/cholnh/study-cs/blob/main/post/question/common/index.md)
 
-#### [ 공통/자바 ]
-- String, StringBuffer, StringBuilder 차이
-String은 불변객체이다. -> 새로운 값을 append 할 때 마다 새로운 객체가 생성 -> 가비지 증가로 인한 힙메모리 부족 -> GC빈도 증가 (메모리, 성능 비효율)
-가변성을 갖는 StringBuilder 도입. 동일 객체내에서 문자열 변경 가능. 그러나 Thread-UnSafe.
-StringBuffer 도입. Thread-Safe 하다는 것은 멀티 스레딩 환경에서 안전하다는 것. 
-(Thread-Safe: 변수 혹은 객체가 여러 스레드로부터 동시에 접근이 이루어져도 프로그램 실행에 문제가 없음을 뜻함.
-  + Thread-Safe하기 위해서 는 재진입성(Re-entrancy)을 띄어야 한다, 각 스레드의 호출마다 정확한 결과가 리턴되어야함,
-  + 공유 자원을 접근할 때 하나의 스레드만 접근하며 write과정은 atomic 해야 함.)
+#### [[ 자바 ]](https://github.com/cholnh/study-cs/blob/main/post/question/java/index.md)
 
+#### [[ 디자인패턴 ]](https://github.com/cholnh/study-cs/blob/main/post/question/design-pattern/index.md)
 
-- 불변객체/가변객체
+#### [[ 설계 ]](https://github.com/cholnh/study-cs/blob/main/post/question/architecture/index.md)
 
-- 자바 메모리구조 (heap, perm)
-
-- Volatile
-변수를 Main Memory에 저장하겠다는 것을 명시함.
-매번 변수를 읽을 때마다 CPU Cache에 저장된 값이 아닌 Main Memory 에서 읽음. (멀티스레딩으로 인한 변수 값 불일치 문제 때문)
-스레드들은 멀티 스레딩 환경에서 제각각 사용하는 CPU Cache 영역이 다름, 캐시 내 값(변수 값)이 제각각 다르게 됨.
-주의) 여러 스레드가 write 하는 것에 원자성(atomic)을 보장하기 위해서는 synchronized 또는 명시적락(Reentrant lock) 사용.
-
-- serialize (직렬화)
-JVM 메모리(힙 또는 스택)내 객체를 외부에서 사용할 수 있도록 byte 형태 데이터 변환.
-(Serializable 구현)객체 -> (ByteArrayOutputStream -> ObjectOutputStream) ObjectOutputStream을 열어서 직렬화 -> 바이트 배열
-serialVersionUID 이 동일해야 역/직렬화 가능, 또한 구조가 변하면 InvalidClassException 발생
-(주로 서블릿세션(메모리위에선 필요없지만 세션 클러스터링, OAuth 정보 db저장 등에 필요), 캐시 등)
-(메모리기반 Cache 저장용량 한계 -> Json 직렬화(경량화))
-
-- transient
-자바 직렬화중 제외하고 싶은 멤버변수를 명시하는 키워드.
-
-- 추상 클래스
-
-- 인터페이스
-
-- OSI 7 layer
-
-- RESTful API
-
-- JVM / GC
-
-- class loader
-
-- Collection
-
-- Annotation
-
-- Generic
-
-- final
-
-- 오버로딩 vs 오버라이딩
-
-- Access Modifier (접근 지정자)
-
-- Wrapper class / First Collection Class
-
-
-#### [ 디자인패턴 ]
-- SOLID
-
-- 함수형 프로그래밍
-
-- 팩토리 메서드 패턴
-
-- 싱글턴 패턴
-
-- 전략 패턴
-
-- 손상방지 패턴
-
-- 계층화 패턴
-
-- 클라-서버 패턴
-
-- 마스터-슬레이브 패턴
-
-- 파이트-필터 패턴
-
-- 브로커 패턴
-
-- 피어 투 피어 패턴
-
-- MVC 패턴
-
-- 블랙보드 패턴
-
-- 인터프리터 패턴
-
-- Publish-Subscribe 패턴
-
-
-#### [ 설계 ]
-
-
-#### [ DB/JPA ]
+#### [[ DB/JPA ]](https://github.com/cholnh/study-cs/blob/main/post/question/db/index.md)
 - NoSQL ?
 
 - 데이터베이스 리플리케이션
@@ -408,10 +318,10 @@ serialVersionUID 이 동일해야 역/직렬화 가능, 또한 구조가 변하�
 - jpa 는 어떻게 트랜잭션을 관리할까
 
 
-#### [ 서버 ]
+#### [[ 서버 ]](https://github.com/cholnh/study-cs/blob/main/post/question/server/index.md)
 
 
-#### [ 스프링 ]
+#### [[ 스프링 ]](https://github.com/cholnh/study-cs/blob/main/post/question/spring/index.md)
 - 제어 반전 (Inversion of control)
 
 - 의존 관계 역전 원칙 (from SOLID)
@@ -421,10 +331,12 @@ serialVersionUID 이 동일해야 역/직렬화 가능, 또한 구조가 변하�
 - AOP
 
 
-#### [ 캐시 ]
+#### [[ 캐시 ]](https://github.com/cholnh/study-cs/blob/main/post/question/cache/index.md)
 
 
-#### [ 네트워크 ]
+#### [[ 네트워크 ]](https://github.com/cholnh/study-cs/blob/main/post/question/network/index.md)
+- OSI 7 layer
+
 - HTTP/1.0
 
 - HTTP/1.1
@@ -446,7 +358,7 @@ serialVersionUID 이 동일해야 역/직렬화 가능, 또한 구조가 변하�
 - 웹 통신 흐름
 
 
-#### [ OS ]
+#### [[ OS ]](https://github.com/cholnh/study-cs/blob/main/post/question/os/index.md)
 - 스레드와 프로세서 차이
 
 - Swapping
@@ -470,10 +382,10 @@ serialVersionUID 이 동일해야 역/직렬화 가능, 또한 구조가 변하�
 - 캐시 지역성
 
 
-#### [ 알고리즘 ]
+#### [[ 알고리즘 ]](https://github.com/cholnh/study-cs/blob/main/post/question/algorithm/index.md)
 
 
-#### [ 자료구조 ]
+#### [[ 자료구조 ]](https://github.com/cholnh/study-cs/blob/main/post/question/data-structure/index.md)
 - 해시 테이블 설명
 key에 해당하는 value를 저장하는 데이터 구조.
 hash function을 통해 key에 대한 hash 값을 구하고 buckets 의 인덱스로 사용한다.
@@ -521,14 +433,14 @@ static int hashCode(String key) {
 - Graph
 
 
-#### [ 빌드 도구 ]
+#### [[ 빌드 도구 ]](https://github.com/cholnh/study-cs/blob/main/post/question/build-tool/index.md)
 - gradle vs maven 차이
 
 
-#### [ OOP ]
+#### [[ OOP ]](https://github.com/cholnh/study-cs/blob/main/post/question/oop/index.md)
 
 
-#### [ TDD ]
+#### [[ TDD ]](https://github.com/cholnh/study-cs/blob/main/post/question/tdd/index.md)
 - 유닛테스트 / 통합테스트
 
 - 전체 테스트 과정
@@ -538,11 +450,11 @@ static int hashCode(String key) {
 - Mock 이란
 
 
-#### [ DDD ]
+#### [[ DDD ]](https://github.com/cholnh/study-cs/blob/main/post/question/ddd/index.md)
 - 도메인 / 애그리거트
 
 
-#### [ MSA ]
+#### [[ MSA ]](https://github.com/cholnh/study-cs/blob/main/post/question/msa/index.md)
 - 모놀리식 아키텍처
 
 - 마이크로서비스 아키텍처
@@ -554,7 +466,7 @@ static int hashCode(String key) {
 - 쿠버네티스
 
 
-#### [ 보안 ]
+#### [[ 보안 ]](https://github.com/cholnh/study-cs/blob/main/post/question/security/index.md)
 - XSS
 
 - CSRF
@@ -562,7 +474,12 @@ static int hashCode(String key) {
 - SQL Injection
 
 
-#### [ CI/CD ]
+#### [[ CI/CD ]](https://github.com/cholnh/study-cs/blob/main/post/question/cicd/index.md)
 
 
 #### [[ SCM ]](https://github.com/cholnh/study-cs/blob/main/post/question/scm/index.md)
+
+
+#### [[ 프로젝트 ]](https://github.com/cholnh/study-cs/blob/main/post/question/project/index.md)
+- 원래의 목적에 맞게 기술을 사용하고 있는가
+- 대체할 수 있는 다른 기술들
