@@ -64,6 +64,61 @@
               </a>
             </td>
         </tr>
+        
+        <tr>
+            <td width="20%">
+              <a href="https://github.com/cholnh/study-cs/blob/main/post/books/regexp/index.md">
+                <img src="/assets/images/cs/tn-regexp.jfif" width="100%" />
+              </a>
+            </td>
+            <td width="20%">
+              <a href="https://github.com/cholnh/study-cs/blob/main/post/books/this-is-coding-test/index.md">
+                <img src="/assets/images/cs/tn-this-is-codingtest.png" width="100%" />
+              </a>
+            </td>
+            <td width="20%">
+              <a href="https://github.com/cholnh/study-cs/blob/main/post/books/vue-js/index.md">
+                <img src="/assets/images/cs/tn-vue-js.jpg" width="100%" />
+              </a>
+            </td>
+            <td width="20%">
+              <a href="https://github.com/cholnh/study-cs/blob/main/post/books/soft-skill/index.md">
+                <img src="/assets/images/cs/tn-soft-skill.jpg" width="100%" />
+              </a>
+            </td>
+            <td width="20%">
+              <a href="https://github.com/cholnh/study-cs/blob/main/post/books/software-security/index.md">
+                <img src="/assets/images/cs/tn-software-security.jpg" width="100%" />
+              </a>
+            </td>
+        </tr>
+        <tr>
+            <td width="20%">
+                <a href="https://github.com/cholnh/study-cs/blob/main/post/books/regexp/index.md">
+                    손에 잡히는 정규표현식
+                </a>
+            </td>
+            <td width="20%">
+              <a href="https://github.com/cholnh/study-cs/blob/main/post/books/this-is-coding-test/index.md">
+                이것이 코딩 테스트다
+              </a>
+            </td>
+            <td width="20%">
+              <a href="https://github.com/cholnh/study-cs/blob/main/post/books/vue-js/index.md">
+                Vue.js 입문
+              </a>
+            </td>
+            <td width="20%">
+              <a href="https://github.com/cholnh/study-cs/blob/main/post/books/soft-skill/index.md">
+                소프트 스킬
+              </a>
+            </td>
+            <td width="20%">
+              <a href="https://github.com/cholnh/study-cs/blob/main/post/books/software-security/index.md">
+                소프트웨어 보안
+              </a>
+            </td>
+        </tr>
     </tbody>
 </table>
 
