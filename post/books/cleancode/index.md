@@ -1,5 +1,5 @@
 ## Clean Code
-![cleancode](/assets/images/cs/tn-cleancode.jpg =100x)
+![cleancode](https://github.com/cholnh/study-cs/blob/main/assets/images/cs/tn-cleancode.jpg =100x)
 
 [ [← back](https://github.com/cholnh/study-cs/blob/main/post/books/index.md#개발-서적) ]
 
