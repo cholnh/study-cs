@@ -13,9 +13,7 @@
 
 <br/>
 
-## 책장
-
-### [책장 전체](https://github.com/cholnh/study-cs/blob/main/post/books/index.md)
+## 책장 [[link](https://github.com/cholnh/study-cs/blob/main/post/books/index.md)]
 
 <br/>
 
