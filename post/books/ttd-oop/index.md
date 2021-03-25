@@ -1,6 +1,6 @@
 ## 테스트 주도 개발로 배우는 객체지향 설계와 실천
 
-<img src="https://github.com/cholnh/study-cs/blob/main/assets/images/cs/tn-ttd-oop.jpg" width="250" />
+<img src="https://github.com/cholnh/study-cs/blob/main/assets/images/cs/tn-ttd-oop.png" width="250" />
 
 [ [← back](https://github.com/cholnh/study-cs/blob/main/post/books/index.md#개발-서적) ]
 
