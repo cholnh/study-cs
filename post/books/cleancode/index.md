@@ -146,7 +146,142 @@
 
 ## 2장 의미 있는 이름
 
+<br/>
 
+### 의도를 분명히 밝혀라
+
+> " 좋은 이름을 지으려면 시간이 걸리지만 좋은 이름으로 절약하는 시간이 훨씬 더 많다. "
+
+- 변수(혹은 함수나 클래스)의 존재 이유는 ?
+- 수행 기능은 ?
+- 사용 방법은 ?
+> 따로 주석이 필요하다면 의도를 분명히 드러내지 못했다는 말이다.
+
+```java
+public List<int[]> getThem() {
+    List<int[]> list1 = new ArrayList<int[]>();
+    for (int[] x : theList)
+        if (x[0] == 4)
+            list1.add(x);
+    return list1;
+}
+```
+
+위 코드는 암암리에 다음과 같은 정보를 안다고 **가정**한다.
+1. theList에 무엇이 들었는가 ?
+2. theList에서 0번째 값이 어째서 중요한가 ?
+3. 값 4는 무슨 의미인가 ?
+4. 함수가 반환하는 리스트 list1을 어떻게 사용하는가 ?
+
+```java
+public List<Cell> getFlaggedCells() {
+    List<Cell> flaggedCells = new ArrayList<Cell>();
+    for (Cell cell : gameBoard)
+        if (cell.isFlagged())
+            fraggedCells.add(cell);
+    return flaggedCells;
+}
+```
+
+단순히 이름만 고쳤는데도 함수가 하는 일을 이해하기 쉬워졌다. 바로 이것이 좋은 이름이 주는 위력이다.
+
+<br/>
+
+### 의미 있게 구분하라
+
+```java
+getActiveAccount();
+getActiveAccounts();
+getActiveAccountInfo();
+```
+
+이 프로젝트에 참여한 프로그래머는 어느 함수를 호출할지 어떻게 알까 ?
+**읽는 사람이 차이를 알도록 이름을 지어라.**
+
+<br/>
+
+### 발음하기 쉬운 이름을 사용하라
+
+### 검색하기 쉬운 이름을 사용하라
+
+### 인코딩을 피하라
+
+> " 문제 해결에 집중하는 개발자에게 인코딩은 불필요한 정신적 부담이다. "
+
+<br/>
+
+### 자신의 기억력을 자랑하지 마라
+
+> " 코드를 읽으면서 변수 이름을 자신이 아는 이름으로 변환해야 한다면 그 변수 이름은 바람직하지 못하다. (변수 i, j, k는 괜찮다) "
+
+<br/>
+
+> " 전문가 프로그래머는 명료함이 최고라는 사실을 이해한다. "
+
+<br/>
+
+### 클래스 이름
+
+> " `Manager` `Processor` `Data` `Info` 등과 같은 단어는 피하고, 동사는 사용하지 않는다. "
+
+<br/>
+
+### 메서드 이름
+
+> " 동사나 동사구가 적합 "
+
+<br/>
+
+생성자를 중복정의 할 때는 **정적 팩토리 메서드**를 사용한다.  
+
+`Complex complex = Complex.FromRealNumber(23.0);` ( o )
+`Complex complex = new Complex(23.0);` ( x ) 
+
+<br/>
+
+### 기발한 이름은 피하라
+
+### 한 개념에 한 단어를 사용하라
+
+> " 추상적인 개념 하나에 단어 하나를 선택해 이를 고수한다. "
+
+똑같은 메서드를 클래스 마다 `fetch`, `retrieve`, `get` 으로 제각각 부르면 혼란스럽다.
+
+<br/>
+
+### 말장난을 하지 마라
+
+집합에 값 하나를 추가하는 `add`메서드 vs 기존 값 두 개를 더하거나 이어서 새로운 값을 만드는 `add`메서드  
+두 메서드는 맥락이 다르다. 일관성을 지키기 위해 `add`를 고수할 필요 없다.  
+`insert`나 `append`와 같은 이름이 적당함.
+
+<br/>
+
+### 해법 영역에서 가져온 이름을 사용하라
+
+> " 코드를 읽을 사람도 프로그래머라는 사실을 명심한다. 그러므로 전산 용어, 알고리즘 이름, 패턴 이름, 수학 용어 등을 사용해도 괜찮다. "
+
+<br/>
+
+### 문제 영역에서 가져온 이름을 사용하라
+
+> " 적절한 '프로그래머 용어'가 없다면, 문제 영역(도메인 영역?)에서 이름을 가져온다. "
+
+<br/>
+
+### 의미 있는 맥락을 추가하라
+
+> " 클래스, 함수, 이름 공간에 의미를 넣어 맥락을 부여한다. "
+
+<br/>
+
+> " 모든 방법이 실패하면 마지막 수단으로 접두어를 붙인다. "
+
+<br/>
+
+### 불필요한 맥락을 없애라
+
+<br/>
 
 [ [← back](https://github.com/cholnh/study-cs/blob/main/post/books/index.md#개발-서적) | [↑ top](https://github.com/cholnh/study-cs/blob/main/post/books/cleancode/index.md#clean-code) ]
 
