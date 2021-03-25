@@ -157,6 +157,8 @@
 - 사용 방법은 ?
 > 따로 주석이 필요하다면 의도를 분명히 드러내지 못했다는 말이다.
 
+<br/>
+
 ```java
 public List<int[]> getThem() {
     List<int[]> list1 = new ArrayList<int[]>();
@@ -172,6 +174,8 @@ public List<int[]> getThem() {
 2. theList에서 0번째 값이 어째서 중요한가 ?
 3. 값 4는 무슨 의미인가 ?
 4. 함수가 반환하는 리스트 list1을 어떻게 사용하는가 ?
+
+<br/>
 
 ```java
 public List<Cell> getFlaggedCells() {
@@ -195,14 +199,18 @@ getActiveAccounts();
 getActiveAccountInfo();
 ```
 
-이 프로젝트에 참여한 프로그래머는 어느 함수를 호출할지 어떻게 알까 ?
+이 프로젝트에 참여한 프로그래머는 어느 함수를 호출할지 어떻게 알까 ?  
 **읽는 사람이 차이를 알도록 이름을 지어라.**
 
 <br/>
 
 ### 발음하기 쉬운 이름을 사용하라
 
+<br/>
+
 ### 검색하기 쉬운 이름을 사용하라
+
+<br/>
 
 ### 인코딩을 피하라
 
@@ -234,12 +242,14 @@ getActiveAccountInfo();
 
 생성자를 중복정의 할 때는 **정적 팩토리 메서드**를 사용한다.  
 
-`Complex complex = Complex.FromRealNumber(23.0);` ( o )
+`Complex complex = Complex.FromRealNumber(23.0);` ( o )  
 `Complex complex = new Complex(23.0);` ( x ) 
 
 <br/>
 
 ### 기발한 이름은 피하라
+
+<br/>
 
 ### 한 개념에 한 단어를 사용하라
 
@@ -251,7 +261,8 @@ getActiveAccountInfo();
 
 ### 말장난을 하지 마라
 
-집합에 값 하나를 추가하는 `add`메서드 vs 기존 값 두 개를 더하거나 이어서 새로운 값을 만드는 `add`메서드  
+- 집합에 값 하나를 추가하는 `add`메서드 
+- 기존 값 두 개를 더하거나 이어서 새로운 값을 만드는 `add`메서드  
 두 메서드는 맥락이 다르다. 일관성을 지키기 위해 `add`를 고수할 필요 없다.  
 `insert`나 `append`와 같은 이름이 적당함.
 
