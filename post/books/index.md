@@ -1,6 +1,24 @@
 ## 책장
+- 개발, 뇌과학, 인문학 그리고 고전 소설 관련한 책들을 읽고 느낀점을 적습니다.
+- 초서-독서 한 내용을 그대로 적는 곳 이기 때문에 타인이 보기에 맥락이 애매할 수 있습니다.
+> 초서 : 책을 읽는데 그치는 것이 아닌 손을 이용해 책의 중요한 내용을 옮겨 적음으로써  
+ 능동적으로 책의 내용을 수용하고 판단하여 새로운 지식을 재창조하는 과정. 메타인지 학습법  
+ - 소설은 주로 감명 깊은 구절을 초서하였습니다.
 
-## 개발 서적
+<br/>
+
+<br/>
+
+## Index
+- [개발](#개발)
+- [인문](#인문)
+- [소설](#소설)
+
+<br/>
+
+<br/>
+
+## 개발
 <table>
     <tbody>
         <tr>
@@ -144,11 +162,11 @@
     </tbody>
 </table>
 
-[ [← back](https://github.com/cholnh/study-cs#-자바-) | [↑ top](https://github.com/cholnh/study-cs/blob/main/post/question/java/index.md#자바) ]
+[ [← back](https://github.com/cholnh/study-cs#책장) | [↑ top](https://github.com/cholnh/study-cs/blob/main/post/books/index.md#책장) ]
 
 <br/>
 
-## 인문 서적
+## 인문
 <table>
     <tbody>
         <tr>
@@ -196,10 +214,7 @@
                 <img src="/assets/images/etc/tn-메모의기술.jpg" width="100%" />
           	</td>
             <td width="20%">
-                <img src="/assets/images/etc/tn-참을수-없는-존재의-가벼움.jpg" width="100%" />
-          	</td>
-          	<td width="20%">
-                <img src="/assets/images/etc/tn-제노사이드.jpg" width="100%" />
+                <img src="/assets/images/etc/tn-지금-외롭다면.jpg" width="100%" />
             </td>
         </tr>
         <tr>
@@ -213,12 +228,21 @@
                 메모의 기술
             </td>
             <td width="20%">
-                참을 수 없는 존재의 가벼움
+                지금 외롭다면 잘되고 있는것이다
             </td>
             <td width="20%">
-                제노사이드
             </td>
         </tr>
+    </tbody>
+</table>
+
+[ [← back](https://github.com/cholnh/study-cs#책장) | [↑ top](https://github.com/cholnh/study-cs/blob/main/post/books/index.md#책장) ]
+
+<br/>
+
+## 인문
+<table>
+    <tbody>
         <tr>
             <td width="20%">
                 <img src="/assets/images/etc/tn-개츠비.jpg" width="100%" />
@@ -227,14 +251,14 @@
                 <img src="/assets/images/etc/tn-나무위의남작.jpg" width="100%" />
           	</td>
             <td width="20%">
-                <img src="/assets/images/etc/tn-지금-외롭다면.jpg" width="100%" />
-          	</td>
-            <td width="20%">
                 <img src="/assets/images/etc/tn-모래의여자.jpg" width="100%" />
           	</td>
           	<td width="20%">
                 <img src="/assets/images/etc/tn-13계단.jpg" width="100%" />
             </td>
+            <td width="20%">
+                <img src="/assets/images/etc/tn-템페스트.jpg" width="100%" />
+          	</td>
         </tr>
         <tr>
             <td width="20%">
@@ -244,40 +268,16 @@
                 나무 위의 남작
             </td>
             <td width="20%">
-                지금 외롭다면 잘되고 있는것이다
-            </td>
-            <td width="20%">
                 모래의 여자
             </td>
             <td width="20%">
                 13계단
             </td>
-        </tr>
-        <tr>
-            <td width="20%">
-                <img src="/assets/images/etc/tn-템페스트.jpg" width="100%" />
-          	</td>
-            <td width="20%">
-          	</td>
-            <td width="20%">
-          	</td>
-            <td width="20%">
-          	</td>
-          	<td width="20%">
-            </td>
-        </tr>
-        <tr>
             <td width="20%">
                 템페스트
-            </td>
-            <td width="20%">
-            </td>
-            <td width="20%">
-            </td>
-            <td width="20%">
-            </td>
-            <td width="20%">
             </td>
         </tr>
     </tbody>
 </table>
+
+[ [← back](https://github.com/cholnh/study-cs#책장) | [↑ top](https://github.com/cholnh/study-cs/blob/main/post/books/index.md#책장) ]
