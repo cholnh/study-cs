@@ -158,9 +158,9 @@
 
 <br/>
 
-**실패하는 테스트 작성**
-
-![image](https://user-images.githubusercontent.com/23611497/112597490-854ee480-8e50-11eb-8d86-a501f83d67b6.png)
+| **실패하는 테스트 작성** |
+|-|
+|![image](https://user-images.githubusercontent.com/23611497/112597490-854ee480-8e50-11eb-8d86-a501f83d67b6.png)|
 
 1. 어떤 기능을 구현할 때 인수 테스트를 작성하는 것으로 시작
     + cf) 인수 테스트 : 만들고자 하는 기능을 시험하는 테스트
