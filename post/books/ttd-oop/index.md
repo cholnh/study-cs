@@ -280,15 +280,375 @@
         + 오래된 픽스처는 어질러지는 부수효과 발생, 이로인해 반복 안되는 테스트, 테스트 실행 전쟁 등 문제 발생.
             > 테스트 실행 전쟁 : 각 테스트에서 동시에 같은 픽스처 자원 접근, 테스트가 무작위로 실패하게 되는 문제.
 
-<br/>
+---
 
 [ [← back](https://github.com/cholnh/study-cs/blob/main/post/books/index.md#개발-서적) | [↑ top](https://github.com/cholnh/study-cs/blob/main/post/books/ttd-oop/index.md#테스트-주도-개발로-배우는-객체지향-설계와-실천) ]
+
+<br/>
+
+## 2장 객체를 활용한 테스트 주도 개발
+
+### 객체망
+
+> " 객체 지향 설계는 객체 자체보다 **'객체 간의 의사소통'** 에 더 집중한다. "
+
+<br/>
+
+> " 위대하고 성장 가능한 시스템을 만들 때의 핵심은 모듈 간의 의사소통에 있지, 모듈의 내부 특성이나 작동 방식에 있지 않다. "
+
+<br/>
+
+- 객체 지향 시스템은 **'협업하는 객체의 망'** 으로 구성되어 있다.
+- 객체의 구성을 변경해 시스템 작동 방식을 바꿀 수 있다.
+- 객체망의 행위에 대한 선언적 정의란
+    + 객체 구성을 **'관리'** 할 목적으로 작성하는 코드.
+    + 객체 구성을 관리한다는 것은 시스템을 관리하는 것.
+    + **'목적'** 에 집중하기 쉬워짐.
+- 즉, 객체 구성을 관리하기 쉽게 구성하면 **'변경이 쉬운 시스템'** 으로 됨.
+    
+---
+
+<br/>
+
+### 값과 객체
+
+책에서 쓰이는 용어의 정확한 대상을 정리
+
+- 값
+    + 양이 고정된 불변 인스턴스.
+    + 개인적인 식별자가 없으므로 두 값 인스턴스의 상태가 같아면 사실상 동일한 셈.
+
+- 객체
+    + 상태가 변할지도 모름.
+    + 객체는 변경 가능한 상태를 이용해 시간의 추이에 따른 객체의 행위를 나타냄.
+    + 두 상태가 정확히 동일하더라도 별개의 식별자를 지님.  
+        (향후 어떤 메시지를 전달 받느냐에 따라 상태가 달라질 수 있기 때문)
+    
+---
+
+<br/>
+
+### 메시지를 따르라
+
+- 객체는 일반적인 의사소통 패턴을 따르고 서로간의 의존성이 명시적.
+- 의사소통 패턴
+    + 객체들이 다른 객체와 상호 작용하는 방법을 관장하는 각종 규칙으로 구성.
+    + 인터페이스 통한 역할 파악, 객체간 전달 가능한 메시지, 언제 전달 가능한지 등
+    + 즉 의사소통 패턴은 **'객체 간에 있을 법한 관계에 의미를 부여'** 하는 행위이다.
+    + 테스트와 목(mock) 객체는 객체 간의 의사소통을 또렷이 보여준다.
+
+<br/>
+
+**객체**
+- 객체를 역할, 책임, 협력자 측면에서 생각하라.
+- 객체는 역할을 하나 이상 구현한 것.
+- 역할은 관련된 책임의 집합.
+- 책임은 어떤 과업을 수행하거나 정보를 알아야 할 의무.
+- 협력은 객체나 역할의 상호 작용에 해당.
 
 ---
 
 <br/>
 
-## 2장 객체를 활용한 테스트 주도 개발
+### 묻지 말고 말하라
+
+- 디미터의 법칙
+    + 객체들의 **'협력 정도를 제한'** 하면 결합도가 효과적으로 낮아진다.
+    + **'한 줄에 점(.)을 하나만 찍는다.'**
+    + 객체 구조의 경로를 따라 멀리 떨어져 있는 낯선 객체에 메시지를 보내는 설계는 피하라는 것.
+
+```java
+public class Post {
+    private final List<Comment> comments;
+
+    public Post(List<Comment> comments) {
+        this.comments = comments;
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+}
+```
+
+```java
+public class Board {
+    private final List<Post> posts;
+
+    public Board(List<Post> posts) {
+        this.posts = posts;
+    }
+
+    public void addComment(int postId, String content) {
+        posts.get(postId).getComments().add(new Comment(content));  // 열차 전복 코드
+    }
+    ...
+}
+```
+
+<br/>
+
+**문제점**
+- 위 `addComment()` 코드처럼 `getter`가 줄줄이 이어지는 코드 형태가 디미터 법칙을 위반한 전형적인 코드 형태.
+- `Board`객체는 `Post`객체에도 영향을 받고, `Comment`객체에도 영향을 받음.
+- 이러한 설계는 객체 간 결합도를 높이고 객체 구조 변화에 쉽게 무너진다. 
+
+<br/>
+
+**해결**
+- 객체는 **'내부적으로 보유하고 있거나 메시지를 통해 확보한 정보만'** 가지고 의사 결정을 내려야 한다.
+- 규칙화 (아래 메서드만 호출해야 한다)
+    + 객체 자신의 메서드 호출
+    + 메서드 파라미터로 넘어온 객체들의 메서드 호출
+    + 메서드 내부 생성, 초기화된 객체 메서드
+    + 인스턴스 변수로 가지고 있는 객체가 소유한 메서드
+    
+```java
+class Demeter {
+    private Member member;
+
+    public myMethod(OtherObject other) {
+        // ...
+    }
+
+    public okLawOfDemeter(Paramemter param) {
+        myMethod();                 // 1. 객체 자신의 메서드
+        param.paramMethod();        // 2. 메서드의 파라미터로 넘어온 객체들의 메서드
+        Local local = new Local();
+        local.localMethod();        // 3. 메서드 내부에서 생성, 초기화된 객체의 메서드
+        member.memberMethod();      // 4. 인스턴스 변수로 가지고 있는 객체가 소유한 메서드
+    }
+}
+```
+```java
+// 1급 컬렉션 객체
+public class Comments {
+    private final List<Comment> comments;
+    
+    public void add(String content) {
+        Comment newComment = Comment.newInstance(content);
+        comments.add(newComment);
+    }
+}
+
+public class Post {
+    private final Comments comments;
+
+    public Post(Comments comments) {
+        this.comments = comments;
+    }
+
+    public void addComment(String content) {
+        comments.add(content);
+    }
+}
+
+public class Board {
+    private final List<Post> posts;
+
+    public Board(List<Post> posts) {
+        this.posts = posts;
+    }
+
+    public void addComment(int postId, String content) {
+        Post post = posts.get(postId);
+        post.addComment(content);
+    }
+}
+```
+
+<br/>
+
+**디미터 법칙 주의사항**
+- 자료구조라면 디미터 법칙을 거론할 필요가 없다.
+    + 자료 
+        + 별 다른 동작 없이 자료를 노출
+        + 자료구조를 사용하는 절차적 코드는 기존 자료구조를 변경하지 않으면서 새 함수를 추가하기 쉬움  
+        + but 새 클래스 추가시 기존 함수 모두 변경해야함
+    + 객체
+        + 동작을 공개하고 자료를 숨김
+        + 객체 지향 코드는 기존 함수를 변경하지 않으면서 새 클래스를 추가하기 쉬움  
+        + but 새 함수 추가시 기존 클래스 모두 변경해야함
+
+- 하나의 .을 강제하는 규칙이 아니다.
+    + `IntStream.of(1, 15, 3, 20).filter(x -> x > 10).count();`  
+        위 코드는 디미터 법칙을 위반한 코드가 아님
+    + IntStream의 내부 구조가 노출되지 않았음. (다른 IntStream으로 변환할 뿐, 객체를 둘러싸고 있는 캡슐은 유지)
+    + 객체 내부 구현에 대한 어떤 정보도 외부로 노출하지 않는다면 괜찮다!
+
+<br/>
+
+**자료구조**
+
+```java
+public class Square {
+    public Point topLeft;
+    public double side;
+}
+
+public class Rectangle {
+    public Point topLeft;
+    public double height;
+    public double width;
+}
+
+public class Circle {
+    public Point center;
+    public double radius;
+}
+
+// 새로운 자료구조(Class)가 생긴다면 ? 
+// 기존 자료구조를 사용하는 Geometry(공용 코드) 메서드는 전부 수정 되어야 한다... (area 등)
+
+public class Geometry {
+    public final double PI = 3.141592653589793;
+
+    public double area(Object shape) throws NoSuchShapeException {
+        if (shape instanceof Square) {
+            Square s = (Square) shape;
+            return s.side * s.side;
+        } else if (shape instanceof Rectangle) {
+            Rectangle r = (Rectangle) shape;
+            return r.height * r.width;
+        } else if (shape instanceof Circle) {
+            Circle c = (Circle) shape;
+            return PI * c.radius * c.radius;
+        } else {
+            throw new NoSuchShapeException();
+        }
+    }
+    
+    // 새로운 함수 추가는 용이함
+    // 기존 자료구조 변경할 필요 없이 쭉쭉 추가 가능
+}
+```
+
+- 따라서 위와 같은 방식(자료구조를 사용하는 절차적 코드)은 자료구조 방식에 유리
+
+<br/>
+
+**객체**
+
+```java
+public interface Shape {
+    double area();
+    
+    // 새로운 함수가 추가된다면 ?
+    // 인터페이스를 구현한 모든 객체들의 수정이 필요함
+}
+
+public class Square implements Shape {
+    private Point topLeft;
+    private double side;
+
+    public double area() {
+        return side * side;
+    }
+}
+
+public class Rectangle implements Shape {
+    private Point topLeft;
+    private double height;
+    private double width;
+
+    public double area() {
+        return height * width;
+    }
+}
+
+public class Circle implements Shape {
+    private Point center;
+    private double radius;
+    public final double PI = 3.141592653589793;
+
+    public double area() {
+        return PI * radius * radius;
+    }
+}
+
+// 새로운 객체(클래스) 생성에는 용이함
+// 기존 구현체들과는 독립적인 객체이기 때문
+```
+
+- 따라서 위와 같은 방식(객체 지향 코드)은 객체 방식에 유리
+- 객체 지향적 코드는 디미터 규칙을 따라야 좋은 설계방식
+    
+---
+    
+<br/>
+
+### 그래도 가끔은 물어라
+
+> " 답을 가늠하는 데 도움이 되는 정보를 묻기보다는 진정 답하고자 하는 질문을 던져야 한다. "
+
+```java
+public void reserveSeats(ReservationRequest request) {
+    for (Carriage carriage : carriages) {
+        if (carriage.getSeats().getPercentReserved() < percentReservedBarrier) {
+            request.reserveSeatsIn(carriage);
+            return
+        }
+    }
+    request.cannotFindSeats();
+}
+``` 
+
+위 코드를 질의 메서드 형태도 변경해보면,
+
+<br/>
+
+```java
+public void reserveSeats(ReservationRequest request) {
+    for (Carriage carriage : carriages) {
+        if (carriage.hasSeatsAvailableWithIn(percentReservedBarrier)) { // 질의 메서드
+            request.reserveSeatsIn(carriage);
+            return
+        }
+    }
+    request.cannotFindSeats();
+}
+```
+
+- 적절한 객체에 행위가 자리 잡아 행위에 이해하기 쉬운 이름이 생기게 된다. (테스트 하기도 용이)
+- 주의할 점은 질의가 정보를 객체 바깥으로 '새어 나가게'하여 시스템을 경직되게 만들 수 있다.
+- 단지 구현이 아니라 **'호출하는 객체의 의도'** 를 서술하는 질의를 작성하려고 애써야 한다.
+
+---
+
+<br/>
+
+### 협력 객체의 단위 테스트
+
+> " 초점을 맞추는 객체에 대해 각 객체가 서로 명령을 전달하고 자기 상태를 질의하는 수단을 노출하지 않아야 한다. "
+
+<br/>
+
+단위테스트에서 단정문을 쓸 만한 부분이 하나도 없는 것처럼 보인다.  
+
+<br/>
+
+**목 객체**
+- 테스트 대상 객체의 이웃을 다른 대체물, 즉 목 객체(mock object)로 대체하는 것.
+- 발생하는 이벤트에 대해 대상 객체가 가짜 이웃과 **'어떻게 상호 작용할지'** 지정할 수 있음.  
+    (이 같은 명세를 **'예상 구문'** 이라 함)
+- 테스트 동안 목 객체는 자신이 예상대로 호출됐는지 단정함.
+- 나머지 테스트가 동작하는 데 필요한 행위(스텁 형태로 동작)를 구현하기도 함.
+
+<br/>
+
+**인터페이스 발견**
+- 객체에 필요한 보조 역할을 파악하는 데 도움.
+- 이러한 보조 역할은 자바 인터페이스로 정의되어 있고 시스템의 나머지 부분을 개발할 때 실제 구현처럼 동작.
+
+---
+
+<br/>
+
+### 목 객체를 활용한 TDD 지원
+
+
+
+---
 
 [ [← back](https://github.com/cholnh/study-cs/blob/main/post/books/index.md#개발-서적) | [↑ top](https://github.com/cholnh/study-cs/blob/main/post/books/ttd-oop/index.md#테스트-주도-개발로-배우는-객체지향-설계와-실천) ]
 
