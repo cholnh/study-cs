@@ -110,7 +110,7 @@ IoC 컨테이너가 사용하는 빈 메타정보는 대략 다음과 같다.
 기존 상위 모듈에서 하위 모듈 방향으로 이어지던 제어권이, IoC 컨테이너를 통해 역전 되었다고 하여 Inversion of control 이라 한다.  
 
 **강 결합 방식 설계 (좋지 않은 설계 방식)**
-|<img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/spring/ioc1.jpg" width="500"/>|
+|<img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/spring/ioc1.jpg"/>|
 |-|
 |그림 1|
 
@@ -120,7 +120,7 @@ IoC 컨테이너가 사용하는 빈 메타정보는 대략 다음과 같다.
 
 **문제점**
 
-|<img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/spring/ioc2.jpg" width="500"/>|
+|<img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/spring/ioc2.jpg"/>|
 |-|
 |그림 2|
 
@@ -128,7 +128,7 @@ IoC 컨테이너가 사용하는 빈 메타정보는 대략 다음과 같다.
 
 **Inversion of control 으로 해결**
 
-|<img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/spring/ioc3.jpg" width="500"/>|
+|<img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/spring/ioc3.jpg"/>|
 |-|
 |그림 3|
 
@@ -136,7 +136,7 @@ IoC 컨테이너가 사용하는 빈 메타정보는 대략 다음과 같다.
 
 <br/>
 
-|<img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/spring/ioc4.jpg" width="500"/>|
+|<img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/spring/ioc4.jpg"/>|
 |-|
 |그림 4|
 
@@ -150,7 +150,7 @@ IoC 컨테이너가 사용하는 빈 메타정보는 대략 다음과 같다.
 
 ## 의존 관계 역전 원칙 (from SOLID)
 
-|<img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/spring/dip1.jpg"/>|
+|<img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/spring/dip1.jpg" width="700"/>|
 |-|
 |그림 1|
 
@@ -161,7 +161,7 @@ IoC 컨테이너가 사용하는 빈 메타정보는 대략 다음과 같다.
 <br/>
 
 **지나친 의존 관계**
-|<img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/spring/dip2.png"/>|
+|<img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/spring/dip2.png" width="700"/>|
 |-|
 |그림 2|
 
@@ -189,13 +189,20 @@ public void pay(PaymentRequest req){
     추상화 된 것은 구체적인 것에 의존하면 안 된다. 구체적인 것이 추상화된 것에 의존해야 한다. "
     
 1. 고차원 모듈에 존재하는 저차원 모듈 의존을 끊는다.
-    <img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/spring/dip3.png"/>
+    |<img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/spring/dip3.png" width="700"/>|
+    |-|
+    |그림 3|
+    
     
 2. 모듈 모두 다른 추상화된 것에 의존해야 한다. 추상화 된 것은 구체적인 것에 의존하면 안 된다.
-    <img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/spring/dip4.png"/>
+    |<img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/spring/dip4.png" width="700"/>|
+    |-|
+    |그림 4|
     
 3. 구체적인 것이 추상화된 것에 의존해야 한다.
-    <img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/spring/dip5.png"/>
+    |<img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/spring/dip5.png" width="700"/>|
+    |-|
+    |그림 5|
     
 <br/>
 
