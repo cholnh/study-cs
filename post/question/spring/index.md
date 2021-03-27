@@ -126,6 +126,8 @@ IoC 컨테이너가 사용하는 빈 메타정보는 대략 다음과 같다.
 
 - 상위 모듈에서 하위 모듈을 관리하면 Coupling(결합도)가 증가하여 모듈화가 어려워진다.
 
+<br/>
+
 **Inversion of control 으로 해결**
 
 |<img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/spring/ioc3.jpg"/>|
@@ -241,5 +243,7 @@ public class ShinhanPaymentService implements PaymentService {
 <br/>
 
 ### AOP
+
+
 
 [ [← back](https://github.com/cholnh/study-cs#-스프링-) | [↑ top](https://github.com/cholnh/study-cs/blob/main/post/question/spring/index.md#스프링) ]
