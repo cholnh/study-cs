@@ -109,12 +109,40 @@ IoC 컨테이너가 사용하는 빈 메타정보는 대략 다음과 같다.
 이렇게 IoC 컨테이너에서 하위 모듈을 관리하고 주입시켜주면 상위 모듈은 제어권이 없어지게 된다.  
 기존 상위 모듈에서 하위 모듈 방향으로 이어지던 제어권이, IoC 컨테이너를 통해 역전 되었다고 하여 Inversion of control 이라 한다.  
 
-**강 결합 방식 설계**
+**강 결합 방식 설계 (좋지 않은 설계 방식)**
+|<img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/spring/ioc1.jpg" width="500"/>|
+|-|
+|그림 1|
+
+- 상위 모듈에서 하위 모듈을 관리한다. (제어권이 상위 모듈에 있음)
+
+<br/>
 
 **문제점**
 
+|<img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/spring/ioc2.jpg" width="500"/>|
+|-|
+|그림 2|
+
+- 상위 모듈에서 하위 모듈을 관리하면 Coupling(결합도)가 증가하여 모듈화가 어려워진다.
+
 **Inversion of control 으로 해결**
 
+|<img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/spring/ioc3.jpg" width="500"/>|
+|-|
+|그림 3|
+
+- IoC 컨테이너에 의해 객체가 생성되고 관리, 주입된다.
+
+<br/>
+
+|<img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/spring/ioc4.jpg" width="500"/>|
+|-|
+|그림 4|
+
+- 의존 관계(=제어권, control)가 역전(Inversion)되어, 상위 모듈은 하위 모듈로 부터 자유로워진다. (결합력이 감소되었으므로)  
+
+<br/>
 
 [ [← back](https://github.com/cholnh/study-cs#-스프링-) | [↑ top](https://github.com/cholnh/study-cs/blob/main/post/question/spring/index.md#스프링) ]
 
