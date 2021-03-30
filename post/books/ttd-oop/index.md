@@ -684,7 +684,7 @@ public void reserveSeats(ReservationRequest request) {
 
 ### JUnit 4 소개
 
-기본적으로 JUnit 은 **'리플렉션'**을 통해 클래스 구조를 파악한 후 해당 클래스 내 테스트를 모두 실행한다.
+기본적으로 JUnit 은 **'리플렉션'** 을 통해 클래스 구조를 파악한 후 해당 클래스 내 테스트를 모두 실행한다.
 
 ```java
 public class CatalogTest {
@@ -811,7 +811,7 @@ assertFalse(containsString("망고").matched(str));     // str 내 '망고' 문�
 <br/>
 
 - 실제로는 매처를 JUnit `assertThat` 메서드와 조합해 사용한다.
-    + `assertThat` 은 매처의 **'자기서술적(self-describing)'**인 특성을 활용해  
+    + `assertThat` 은 매처의 **'자기서술적(self-describing)'** 인 특성을 활용해  
       Assertion 에 실패할 경우 뭐가 잘못됐는지 분명하게 드러낼 수 있다.
 
 ```java
@@ -941,8 +941,8 @@ public class AuctionMessageTranslatorTest {
 
 <br/>
 
-예상 구문 블록은 **'이웃 객체가 어떻게 호출되는지 기술하는 코드'**와  
-**'실제도 객체를 호출하고 결과를 검사하는 코드'**를 분명하게 구분하는 데 목적이 있다.  
+예상 구문 블록은 **'이웃 객체가 어떻게 호출되는지 기술하는 코드'** 와  
+**'실제도 객체를 호출하고 결과를 검사하는 코드'** 를 분명하게 구분하는 데 목적이 있다.  
 (선언적인 언어처럼 동작함)  
 
 <br/>
