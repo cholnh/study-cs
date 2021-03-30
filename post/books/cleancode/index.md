@@ -222,7 +222,7 @@ getActiveAccountInfo();
 
 <blockquote><p>" 코드를 읽으면서 변수 이름을 자신이 아는 이름으로 변환해야 한다면 그 변수 이름은 바람직하지 못하다. (변수 i, j, k는 괜찮다) "</p></<blockquote>
 
-<blockquote><p>" 전문가 프로그래머는 명료함이 최고라는 사실을 이해한다. "</p></<blockquote>
+<blockquote><p>" 전문가 프로그래머는 명료함이 최고라는 사실을 이해한다. "</p></blockquote>
 
 <br/>
 
