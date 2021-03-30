@@ -771,6 +771,8 @@ public class CatalogTest {
 - JUnit 이 리플렉션을 수행해 해당 테스트를 실행하는 방식은 테스트 러너에서 제어한다.
 - `@RunWith` 애노테이션으로 설정.
 
+---
+
 <br/>
 
 ### 햄크레스트 매처와 assertThat()
@@ -832,6 +834,8 @@ Expected: not a string containing "바나나"
 - 사용자가 햄크레스트를 확장할 수 있다.
     + 매처 인터페이스를 팩터리 메서드로 구현하여 매처를 작성.
     + 결과물은 기존 매처 표현식과 자연스럽게 합쳐진다.
+
+---
 
 <br/>
 
@@ -944,6 +948,8 @@ public class AuctionMessageTranslatorTest {
 <br/>
 
 > " 가장 중요한 것은 구현 방법이 아니라 그 이면에 자리한 개념과 동기다. "
+
+---
 
 <br/>
     
