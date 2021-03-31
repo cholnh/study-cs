@@ -1,8 +1,9 @@
 ## 스프링
 - [의존 관계 (Dependency)](#의존-관계-dependency)
+- [의존성 주입 (Dependency Injection)](#의존성-주입-dependency-injection)
 - [제어 반전 (Inversion of control)](#제어-반전-inversion-of-control)
 - [의존 관계 역전 원칙 (from SOLID)](#의존-관계-역전-원칙-from-solid)
-- [의존성 주입 (Dependency Injection)](#의존성-주입-dependency-injection)
+- [AOP](#AOP)
 
 [ [← back](https://github.com/cholnh/study-cs#-스프링-) ]
 

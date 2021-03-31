@@ -101,6 +101,19 @@
 
 ---
 
+### [[ 스프링 ]](https://github.com/cholnh/study-cs/blob/main/post/question/spring/index.md)
+- [의존 관계 (Dependency)](https://github.com/cholnh/study-cs/blob/main/post/question/spring/index.md#의존-관계-dependency)
+- [의존성 주입 (Dependency Injection)](https://github.com/cholnh/study-cs/blob/main/post/question/spring/index.md#의존성-주입-dependency-injection)
+- [제어 반전 (Inversion of control)](https://github.com/cholnh/study-cs/blob/main/post/question/spring/index.md#제어-반전-inversion-of-control)
+- [의존 관계 역전 원칙 (from SOLID)](https://github.com/cholnh/study-cs/blob/main/post/question/spring/index.md#의존-관계-역전-원칙-from-solid)
+- [AOP](https://github.com/cholnh/study-cs/blob/main/post/question/spring/index.md#AOP)
+
+[ [↑ top](https://github.com/cholnh/study-cs#Intro) ]
+
+<br/>
+
+---
+
 ### [[ 디자인패턴 ]](https://github.com/cholnh/study-cs/blob/main/post/question/design-pattern/index.md)
 - [SOLID](https://github.com/cholnh/study-cs/blob/main/post/question/design-pattern/index.md#SOLID)
 - [함수형 프로그래밍](https://github.com/cholnh/study-cs/blob/main/post/question/design-pattern/index.md#함수형-프로그래밍)
@@ -152,17 +165,6 @@
 ---
 
 ### [[ 서버 ]](https://github.com/cholnh/study-cs/blob/main/post/question/server/index.md)
-
-[ [↑ top](https://github.com/cholnh/study-cs#Intro) ]
-
-<br/>
-
----
-
-### [[ 스프링 ]](https://github.com/cholnh/study-cs/blob/main/post/question/spring/index.md)
-- [제어 반전 (Inversion of control)](https://github.com/cholnh/study-cs/blob/main/post/question/spring/index.md#제어-반전-inversion-of-control)
-- [의존 관계 역전 원칙 (from SOLID)](https://github.com/cholnh/study-cs/blob/main/post/question/spring/index.md#의존-관계-역전-원칙-from-solid)
-- [의존성 주입 (Dependency Injection)](https://github.com/cholnh/study-cs/blob/main/post/question/spring/index.md#의존성-주입-dependency-injection)
 
 [ [↑ top](https://github.com/cholnh/study-cs#Intro) ]
 
