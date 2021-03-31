@@ -270,7 +270,7 @@ public class ShinhanPaymentService implements PaymentService {
 
 <br/>
 
-스프링을 `Proxy` 기반의 AOP를 제공한다.  
+스프링은 `Proxy` 기반의 AOP 를 제공한다.  
 조금 더 자세한 함수 호출 방식은 다음과 같다.
 
 |<img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/spring/aop2.jpg" width="700"/>|
@@ -279,7 +279,7 @@ public class ShinhanPaymentService implements PaymentService {
 
 <br/>
 
-**스프링 프록시 자세하게 알아보기**
+**스프링 프록시 자세하게 알아보기**  
 - 스프링은 프록시 기반의 AOP를 제공하며, 이를 구현하기 위해 `Java Dynamic Proxy` 또는 `Cglib` 사용.
 - `AopProxy` 라는 `Delegator` 인터페이스로 표현.
     + Dynamic proxy 기반은 `JdkDynamicAopProxy` 클래스
@@ -301,10 +301,11 @@ public class ShinhanPaymentService implements PaymentService {
     + Cglib 기존 문제점(생성자 중복 호출, default 생성자 필요 문제 등)을 `Objenesis` 라이브러리가 해결.
 - AspectJ 를 사용하기 위해서는 AJC 등 별도의 컴파일러 설정 필요하나 스프링 AOP는 그렇지 않음. (성능도 크게 체감하기 힘들다고 함)
 
+<br/>
 
-**Bean을 Proxy로**
-스프링에서 Bean 으로 등록된(=BeanDefinition에 사전 정의된) 객체는 IoC 컨테이너에서 관리된다.  
-Bean 객체에 대해 스프링 AOP는 어떻게 Proxy를 생성하고 관리할까? 
+**Bean을 Proxy로**  
+- 스프링에서 Bean 으로 등록된(=BeanDefinition에 사전 정의된) 객체는 IoC 컨테이너에서 관리된다.  
+    Bean 객체에 대해 스프링 AOP는 어떻게 Proxy를 생성하고 관리할까? 
 
 |<img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/spring/aop3.jpg" width="700"/>|
 |-|
@@ -312,7 +313,7 @@ Bean 객체에 대해 스프링 AOP는 어떻게 Proxy를 생성하고 관리할
 
 <br/>
 
-**Bean 후처리기**
+**Bean 후처리기**  
 - 스프링은 자동 Proxy 생성을 위해 `DefaultAdvisorAutoProxyCreator` 클래스를 Bean 후처리기에 등록하여 사용한다.
     + Advisor 를 이용한 자동 프록시 생성기이다.
     + Bean 객체 일부를 `Proxy` 로 포장하고, `Proxy` 를 Bean 대신 IoC 컨테이너에 등록한다.  
