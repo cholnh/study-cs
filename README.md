@@ -106,7 +106,7 @@
 - [의존성 주입 (Dependency Injection)](https://github.com/cholnh/study-cs/blob/main/post/question/spring/index.md#의존성-주입-dependency-injection)
 - [제어 반전 (Inversion of control)](https://github.com/cholnh/study-cs/blob/main/post/question/spring/index.md#제어-반전-inversion-of-control)
 - [의존 관계 역전 원칙 (from SOLID)](https://github.com/cholnh/study-cs/blob/main/post/question/spring/index.md#의존-관계-역전-원칙-from-solid)
-- [AOP](https://github.com/cholnh/study-cs/blob/main/post/question/spring/index.md#AOP)
+- [AOP](https://github.com/cholnh/study-cs/blob/main/post/question/spring/index.md#aop)
 
 [ [↑ top](https://github.com/cholnh/study-cs#Intro) ]
 
