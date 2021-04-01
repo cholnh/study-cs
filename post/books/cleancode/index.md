@@ -547,6 +547,8 @@ public enum Error {
 
 ## 4장 주석
 
+<br/>
+
 
 
 [ [← back](https://github.com/cholnh/study-cs/blob/main/post/books/index.md#개발-서적) | [↑ top](https://github.com/cholnh/study-cs/blob/main/post/books/cleancode/index.md#clean-code) ]
