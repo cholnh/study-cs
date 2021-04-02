@@ -582,6 +582,8 @@ if ((employee.flags & HOURLY_FLAG) &&
     (employee.age > 65))
 ```
 
+vs
+
 ```java
 if (employee.isEligibleForFullBenefits())
 ```
