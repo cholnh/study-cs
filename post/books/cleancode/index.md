@@ -549,7 +549,178 @@ public enum Error {
 
 <br/>
 
+<blockquote><p> " 우리에게 프로그래밍 언어를 치밀하게 사용해 의도를 표현할 능력이 있다면, 주석은 거의 필요하지 않으리라. 아니, 전혀 필요하지 않으리라. " </p></blockquote>
 
+<blockquote><p> " 우리는 코드로 의도를 표현하지 못해, 그러니까 **실패를 만회하기 위해** 주석을 사용한다. " </p></blockquote>
+
+<blockquote><p> " 주석을 달 때마다 자신에게 표현력이 없다는 사실을 푸념해야 마땅하다. " </p></blockquote>
+
+<blockquote><p> " 주석이 언제나 코드를 따라가지는 않는다. 아니, 따라가지 못한다. " </p></blockquote>
+
+<blockquote><p> " 진실은 한 곳에만 존재한다. 바로 코드다. 코드만이 자기가 하는 일을 진실되게 말한다. " </p></blockquote>
+
+<br/>
+
+### 주석은 나쁜 코드를 보완하지 못한다
+
+코드에 주석을 추가하는 일반적인 이류는 **코드 품질이 나쁘기 때문** 이다.  
+표현력이 풍부하고 깔끔하며 주석이 거의 없는 코드가,  
+복잡하고 어수선하며 주석이 많이 달린 코드보다 훨씬 좋다.  
+
+> " 자신이 저지른 난장판을 주석으로 설명하려 애쓰는 대신에 그 난장판을 깨끗이 치우는 데 시간을 보내라! "
+
+<br/>
+
+
+### 코드로 의도를 표현하라!
+
+두 예제가 있다. 어느 쪽이 나은지는 한 눈에 알아볼 수 있다.
+
+```java
+// 직원에게 복지 혜택을 받을 자격이 있는지 검사한다.
+if ((employee.flags & HOURLY_FLAG) &&
+    (employee.age > 65))
+```
+
+```java
+if (employee.isEligibleForFullBenefits())
+```
+
+<br/>
+
+### 좋은 주석
+
+글자 값을 한다고 생각하는 주석:  
+
+- 법적인 주석
+    + 저작권 정보와 소유권 정보 등을 소스 파일 첫머리에 주석으로 표시
+- 정보를 제공하는 주석
+    + 기본적인 정보
+
+```java
+// 테스트 중인 Responder 인스턴스를 반환한다.
+protected abstract Responder responderInstance(); 
+```
+
+또는
+
+```java
+// kk:mm:ss EEE, MMM dd, yyyy 형식이다.
+Pattern timeMatcher = Pattern.compile(
+    "\\d*:\\d*:\\d* \\w*,\\w* \\d*,\\d*");
+```
+
+    + 위에 제시간 주석은 코드에서 사용한 정규표현식이 시각과 날짜를 뜻한다고 설명한다.  
+
+<br/>
+
+- 의도를 설명하는 주석
+    + (구현을 이해하게 도와주는 선을 넘어) 결정에 깔린 의도를 설명하는 주석이다.  
+        다음 예제는 두 객체를 비교할 때 다른 어떤 객체보다 자기 객체에 높은 순위를 주기로 결정한다.  
+
+```java
+public int compareTo(Object o) {
+    if (o instanceof WikiPagePath) {
+        WikiPagePath p = (WikiPagePath) o;
+        String compressedName = StringUtil.join(names, "");
+        String compressedArgumentName = StringUtil.join(p.names, "");
+        return compressedName.compareTo(compressedArgumentName);
+    }
+    return 1; // 오른쪽 유형이므로 정렬 순위가 더 높다.
+}
+```
+
+<br/>
+
+- 의미를 명료하게 밝히는 주석
+    + 모호한 인수나 반환값은 그 의미를 읽기 좋게 표현하면 이해하기 쉬워진다.  
+    + 일반적으로는 인수나 반환값 자체를 명확하게 만들면 더 좋겠지만, 인수나 반환값이  
+        **표준 라이브러리나 변경하지 못하는 코드에 속한다면** 주석이 유용하다.
+
+```java
+public void testCompareTo() throw Exception {
+    WikiPagePath a = PathParser.parse("PageA");
+    WikiPagePath ab = PathParser.parse("PageA.PageB");
+    WikiPagePath b = PageParser.parse("PageB");
+    ...
+    assertTrue(a.compareTo(a) == 0);      // a == a
+    assertTrue(a.compareTo(b) != 0);      // a != b
+    assertTrue(ab.compareTo(ab) == 0);    // ab == ab
+    ...
+}
+```
+
+    + 그릇된 주석을 달아놓을 위험이 상당히 높다.  
+    + 위 주석이 올바른지 검증하기 쉽지 않다. (주석은 코드를 따라가지 않는다!)  
+ 
+<br/>
+
+- 결과를 경고하는 주석
+    + 때로는 다른 프로그래머에게 결과를 경고할 목적으로 주석을 사용한다.
+
+```java
+// 여유 시간이 충분하지 않다면 실행하지 마십시오.
+public void _testWithReallyBigFile() {
+    whiteLinesToFile(10000000);
+    
+    response.setBody(testFile);
+    response.setReadyToSend(this);
+    String responseString = output.toString();
+    assertSubString("Content-Length: 1000000000", responseString);
+    assertTrue(bytesSent > 1000000000);
+}
+```
+
+    + 위 예제는 @Ignore 속성을 이용하여 테스트를 꺼버릴 수 있다..  
+        `@Ignore("실행이 너무 오래 걸림")`
+
+<br/>
+
+- TODO 추석
+    + '앞으로 할 일'을 //TODO 주석으로 남겨두면 편하다.  
+
+```java
+// TODO-MdM 현재 필요하지 않다.
+// 체크아웃 모델을 도입하면 함수가 필요 없다.
+protected VersionInfo makeVersion() throws Exception {
+    return null;
+}
+```
+
+    + 필요하다 여기지만 당장 구현하기 어려운 업무를 기술한다.
+        + 더 이상 필요 없는 기능을 삭제하라는 알림
+        + 누군가에게 문제를 봐달라는 요청
+        + 더 좋은 이름을 떠올려 달라는 부탁
+        + 앞으로 발생할 이벤트에 맞춰 코드를 고치라는 주의 
+        + 등등... 에 유용하다
+
+    + 그래도 TODO 로 떡칠한 코드는 바람직하지 않다.  
+        그러므로 주기적으로 TODO 주석을 점검해 없애도 괜찮은 주석은 없애라.
+
+<br/>
+
+- 중요성을 강조하는 주석
+
+```java
+...
+String listItemContent = match.group(3).trim();
+// 여기서 trim은 정말 중요하다. trim 함수는 문자열에서 시작 공백을 제거한다.
+// 문자열에 시작 공백이 있으면 다른 문자열로 인식되기 때문이다.
+new ListItemWidget(this, listItemContent, this.level + 1);
+return buildList(text.substring(match.end()));
+```
+
+<br/>
+
+- 공개 API
+    + 설명이 잘 된 공개 API 는 유용하다.
+    + 표준 자바 라이브러리에서 사용한 Javadocs 가 좋은 예다.
+    + 여느 주석과 마찬가지로 Javadocs 역시 독자를 오도하거나, 그릇된 정보를 전달할 가능성이 존재한다.
+    
+<br/>
+
+### 나쁜 주석
+    
 
 [ [← back](https://github.com/cholnh/study-cs/blob/main/post/books/index.md#개발-서적) | [↑ top](https://github.com/cholnh/study-cs/blob/main/post/books/cleancode/index.md#clean-code) ]
 
