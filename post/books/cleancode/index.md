@@ -719,7 +719,525 @@ return buildList(text.substring(match.end()));
 <br/>
 
 ### 나쁜 주석
+
+- 주절거리는 주석
+    + 특별한 이유 없이 주석을 다는 행위
     
+```java
+public void loadProperties() {
+    try {
+        String propertiesPath = propertiesLocation + "/" + PROPERTIES_FILE;
+        FileInputStream propertiesStream = new FileInputStream(propertiesPath);
+        loadedProperties.load(propertiesStream);
+    } 
+    catch (IOException e) {
+        // 속성 파일이 없다면 기본값을 모두 메모리로 읽어 들였다는 의미이다.
+    }
+}
+```
+
+catch 블록에 있는 주석은 무슨 뜻일까? (의미가 전해지지 않는다)  
+`IOException` 이 발생하면 속성 파일이 없다는 뜻이란다.  
+그러면 누가 모든 기본값을 읽어 들이는가?  
+`loadedProperties.load()` 를 호출하기 전에 읽나?  
+아니면 `loadedProperties.load()` 가 예외를 잡아 기본값을 읽어 들인 후 예외를 던져주는가?  
+저자가 `catch` 블록을 비워놓기 뭐해서 몇 마디 덧 붙였을 뿐인가?  
+**답을 알아내려면 다른 코드를 뒤져보는 수밖에 없다.**  
+즉 독자와 제대로 소통하지 못하는 주석이다.  
+
+<br/>
+
+- 같은 이야기를 중복하는 주석
+
+```java
+// this.closed 가 true 일 때 반환되는 유틸리티 메서드다.
+// 타임아웃에 도달하면 예외를 던진다.
+public synchronized void waitForClose(final long timeoutMillis) throws Exception {
+    if (!closed) {
+        wait(timeoutMillis);
+        if (!closed)
+            throw new Exception("MockResponseSender could not be closed");
+    }
+}
+```
+
+헤더에 달린 주석이 같은 코드 내용을 그대로 **중복** 한다.  
+이와 같은 주석은  
+- 자칫하면 코드보다 주석을 읽는 시간이 더 오래 걸린다.  
+- 주석이 코드보다 더 많은 정보를 제공하지 못한다.
+- 실제로 코드보다 부정확해 함수를 대충 이해하고 넘어가게 만든다.
+
+엔진 후드를 열어볼 필요가 없다며 고객에게 아양 떠는 중고차 판매원과 비슷하다.  
+
+<br/>
+
+아래는 쓸모없고 중복된 Javadocs 가 매우 많은 코드이다.  
+이러한 같은 이야기를 중복하는 주석은 코드만 지저분하고 정신 없게 만든다.  
+
+```java
+public abstract class ContainerBase
+    implements Container, Lifecycle, Pipeline,
+    MBeanRegistration, Serializable {
+    
+    /**
+     * 이 컴포넌트의 프로세서 지연값
+     */
+    protected int backgroundProcessorDelay = -1;
+    
+    /**
+     * 이 컴포넌트를 지원하기 위한 생명주기 이벤트
+     */
+    protected LifecycleSupport lifecycle = new LifecycleSupport(this);
+    
+    /**
+     * 이 컴포넌트를 위한 컨테이너 이벤트 Listener
+     */
+    protected ArrayList listeners = new ArrayList();
+    
+    ...
+}
+```
+
+<br/>
+
+- 오해할 여지가 있는 주석
+
+```java
+// this.closed 가 true 일 때 반환되는 유틸리티 메서드다.
+// 타임아웃에 도달하면 예외를 던진다.
+public synchronized void waitForClose(final long timeoutMillis) throws Exception {
+    if (!closed) {
+        wait(timeoutMillis);
+        if (!closed)
+            throw new Exception("MockResponseSender could not be closed");
+    }
+}
+```
+
+위에서 본 주석은 중복이 상당히 많으면서도 오해의 여지 또한 존재한다.  
+- `closed` 가 `true` 로 변하는 **순간** 에 메서드는 (바로)반환되지 않는다. 
+- `closed` 가 `true` **여야** 메서드는 반환된다. (즉시 반환이 아니라는 뜻)
+
+누군가 **주석만 읽고** `closed` 가 `true` 로 변하는 **순간** (즉시)함수가 반환되리라는 생각으로 경솔하게 함수를 호출할지도 모른다.  
+
+<br/>
+
+- 의무적으로 다는 주석
+    + 모든 함수에 Javadocs 를 달거나 모든 변수에 주석을 달아야 한다는 규칙은 어리석다.  
+
+```java
+/**
+ * @param title CD 제목
+ * @param author CD 저자
+ * @param track CD 트랙 숫자
+ * @param durationInMinutes CD 길이(단위: 분)
+ */
+public void addCD(String title, String author, int tracks, int durationInMinutes) {
+    ...
+}
+```
+
+<br/>
+
+- 이력을 기록하는 주석
+    + 예전에는 모듈 첫머리에 변경 이력을 기록하고 관리하는 관례가 바람직했다.  
+        당시에는 소스 코드 관리 시스템이 없었으니까.  
+        하지만 이제는 혼란만 가중할 뿐이다. 완전히 제거하는 편이 좋다.
+
+<br/>
+
+- 있으나 마나 한 주석
+    + 너무 당연한 사실을 언급하며 새로운 정보를 제속하지 못하는 주석
+
+```java
+/**
+ * 기본 생성자
+ */
+protected AnnualDateRule() {}
+
+/** 월 중 일자 */
+private int dayOfMonth;
+
+/**
+ * 월 중 일자를 반환한다.
+ * 
+ * @return 월 중 일자
+ */
+public int getDayOfMonth() {
+    return dayOfMonth;
+}
+```
+
+위와 같은 주석은 지나친 참견이다.  
+결국은 코드가 바뀌면서 주석은 거짓말로 변한다.  
+
+<br/>
+
+아래 예시를 보자
+
+```java
+private void startSending() {
+    try {
+        doSending();
+    }
+    catch (SocketException e) {
+        // 정상. 누군가 요청을 멈췄다.
+    }
+    catch (Exception e) {
+        try {
+            response.add(ErrorResponder.makeExceptionString(e));
+            response.closeAll();
+        }
+        catch (Exception e1) {
+            // 이게 뭐야!
+        }
+    }
+}
+```
+
+첫 번째 주석은 적절해 보인다.  
+`catch` 블록을 무시해도 괜찮은 이유를 설명하는 주석이다.  
+하지만 두 번째 주석은 전혀 쓸모가 없다.  
+다음과 같이 코드 구조를 개선할 수 있다.
+
+```java
+private void startSending() {
+    try {
+        doSending();
+    }
+    catch (SocketException e) {
+        // 정상. 누군가 요청을 멈췄다.
+    }
+    catch (Exception e) {
+       addExceptionAndCloseResponse(e);
+    }
+}
+
+private void addExceptionAndCloseResponse(Exception e) {
+    try {
+        response.add(ErrorResponder.makeExceptionString(e));
+        response.closeAll();
+    }
+    catch (Exception e) {  }
+}
+```
+
+마지막 `try/catch` 블록을 독자적인 함수로 만드는 데 노력을 쏟았어야 했다.
+
+<br/>
+
+- 무서운 잡음
+    + 때로는 Javadocs 도 잡음이다.  
+        아래 나오는 (오픈 소스 라이브러리 코드)Javadocs 는 어떤 목적을 수행할까? 닶: 없다.  
+        단지 문서를 제공해야 한다는 잘못된 욕심으로 탄생한 잡음일 뿐이다.  
+
+```java
+/** The name. */
+private String name;
+
+/** The version. */
+private String version;
+
+/** The licenceName. */
+private String licenceName;
+
+/** The version. */
+private String info;
+```
+
+아래 version 은 복붙 하다가 생긴 오류인가 보다.  
+결국 주석 작성에 주의를 기울이지 않는다면, 읽는 사람은 아무 이익을 얻을 수 없다.  
+
+<br/>
+
+- 함수나 변수로 표현할 수 있다면 주석을 달지 마라
+
+```java
+// 전역 목록 <smodule> 에 속하는 모듈이 우리가 속한 하위 시스템에 의존하는가?
+if (smodule.getDependSubsystems().contains(subSysMod.getSubSystem()))
+```
+
+위 코드에서 주석을 없애고 다시 표현하면 다음과 같다.
+
+```java
+ArrayList moduleDependees = smodule.getDependSubsystems();
+String ourSubSystem = subSysMod.getSubSystem();
+if (moduleDependees.contains(ourSubSystem))
+```
+
+위와 같이 주석이 필요하지 않도록 코드를 개선하는 편이 더 좋다.
+
+<br/>
+
+- 위치를 표시하는 주석
+
+```java
+// Actions ////////////////////////////////////
+```
+
+일반적으로 위와 같은 주석은 가독성만 낮춘다.  
+극히 드물게 유용한 경우도 있지만 자주 사용하면 독자가 흔한 잡음으로 여겨 무시한다.  
+
+<br/>
+
+- 닫는 괄호에 다는 주석
+    + 중첩이 심하고 장황한 함수라면 의미가 있을지도 모르지만,  
+        작고 캡슐화된 함수에는 잡음일 뿐이다.  
+        **닫는 괄호에 주석을 달아야겠다고 생각이 든다면 대신에 함수를 줄이려 시도하자.**  
+
+<br/>
+
+- 공로를 돌리거나 저자를 표시하는 주석
+
+```java
+/* 길동이 추가함 */
+```
+
+소스 코드 관리 시스템을 이용하도록 하자.  
+현실적으로 이런 주석은 그냥 오랫동안 코드에 방치되어 점차 부정확하고 쓸모없는 정보로 변하기 쉽다.  
+
+<br/>
+
+- 주석으로 처리한 코드
+    + 주석으로 처리된 코드는 다른 사람들이 지우기를 주저한다.  
+        이유가 있어 남겨놓았으리라 생각해서 (중요한 코드일까봐)지우면 안 된다고 생각한다.  
+        이 역시 코드 관리 시스템이 우리를 대신해 코드를 기억해준다.  
+        그냥 코드를 삭제해라. 잃어버릴 염려 없다.  
+
+<br/>
+
+- HTML 주석
+    + 소스 코드에서 HTML 주석은 혐오 그 자체다.  
+        주석에 HTML 태그를 삽입해야 하는 책임은 프로그래머가 아니라 도구가 져야 한다.  
+
+<br/>
+
+- 전역 정보
+    + 근처에 있는 코드만 기술하라.  
+        코드 일부에 주석을 달면서 **시스템의 전반적인 정보를 기술하지 마라.**  
+
+```java
+/**
+ * 적합성 테스트가 동작하는 포트: 기본값은 <b>8082</b>
+ * 
+ * @param fitnessePort
+ */
+public void setFitnessePort(int fitnessePort) {
+    this.fitnessePort = fitnessePort;
+}
+```
+
+위 주석은 심하게 중복되었다는 사실 외에도 기본 포트 정보(함수에서 알 필요 없는)를 기술한다.  
+하지만 함수 자체는 포트 기본값을 전혀 통제하지 못한다.  
+즉 시스템 어딘가에 있는 다른 함수를 설명하고 있다.  
+**(어딘가에 있는)포트 기본값 설정하는 코드가 변해도 아래 주석이 변하리라는 보장은 전혀 없다.**  
+
+<br/>
+
+- 너무 많은 정보
+    + 주석에다 흥미로운 역사나 관련 없는 정보를 정활하게 늘어놓지 마라.  
+        독자에게 불필요하며 불가사의한 정보일 뿐이다.  
+
+<br/>
+
+- 모호한 관계
+    + 주석과 주석이 설명하는 코드는 **둘 사이 관계가 명백** 해야 한다.  
+
+```java
+/*
+ * 모든 픽셀을 담을 만큼 풍분한 배열로 시작한다(여기에 필터 바이트를 더한다).
+ * 그리고 헤더 정보를 위해 200바이트를 더한다.
+ */
+this.pngBytes = new byte[((this.width + 1) * this.height * 3) + 200];
+```
+
+여기서 필터 바이트란 무엇일까?  
+주석을 다는 목적은 코드만으로 설명이 부족해서다.  
+주석 자체가 다시 설명을 요구한다.  
+
+<br/>
+
+- 함수 헤더
+    + 짧고 한가미나 수행하며 이름을 잘 붙인 함수가  
+        주석으로 헤더를 추가한 함수보다 훨씬 좋다.  
+
+<br/>
+
+- 비공개 코드에서 Javadocs
+    + (공개 API 가 아닌)시스템 내부에 속한 클래스에 Javadocs 를 생성할 필요 없다.  
+
+<br/>
+
+### 예제
+
+다음은 에라스토테네스의 체 알고리즘을 구현한 코드를 리팩터링하는 과정을 보여준다.  
+
+<br/>
+
+**변경 전**
+
+```java
+/**
+ * 이 클래스는 사용자가 지정한 최대 값까지 소수를 생성한다. 사용된 알고리즘은
+ * 에라스토테네스의 체다.
+ * <p>
+ * 에라스토테네소: 기원전 276년에 리비아 키레네에서 출생, 기원전 194년에 사망
+ * 지구 둘레를 최초로 계싼한 사람이자 달력에 윤년을 도입한 사람.
+ * 알렉산드리아 도서관장을 역임.
+ * </p>
+ * 알고리즘은 상당히 단순하다. 2에서 시작하는 정수 배열을 대상으로
+ * 2의 배수를 모두 제거한다. 다음으로 남은 정수를 찾아 이 정수의 배수를 모두 지운다.
+ * 최대 값의 제곱근이 될 때까지 이를 반복한다.
+ * 
+ * @author 홍길동
+ * @version 2021.04.03
+ */
+import java.util.*;
+
+public class GeneratePrimes {
+    /**
+     * @param maxValue 는 소수를 찾아낼 최대 값
+     */
+    public static int[] generatePrimes(int maxValue) {
+        if (maxValue >= 2) {    // 유일하게 유효한 경우
+            // 선언
+            int s = maxValue + 1;   // 배열 크기
+            boolean[] f = new boolean[s];
+            int i;
+            
+            // 배열을 참으로 초기화
+            for (i = 0; i < s; i++)
+                f[i] = true;
+            
+            
+            // 소수가 아닌 알려진 숫자를 제거
+            f[0] = f[1] = false;
+            
+            // 체
+            for (i = 2; i < Math.sqrt(s) + 1; i++) {
+                if (f[i]) { // i 가 남아 있는 숫자라면 이 숫자의 배수를 구한다.
+                    for (j = 2 * i; j < s; j += i) 
+                        f[j] = false;   // 배수는 소수가 아니다.
+                }
+            }
+            
+            // 소수 개수는?
+            int count = 0;
+            for (i = 0; i < s; i++) {
+                if (f[i])
+                    count++;    // 카운트 증가
+            }
+            
+            int[] primes = new int[count];
+            
+            // 소수를 결과 배열로 이동한다.
+            for (i = 0, j = 0; i < s; i++) {
+                if (f[i])   // 소수일 경우에
+                    primes[j++] = i;
+            }
+            
+            return primes;
+        }
+        else // maxVlue < 2
+            return new int[0];  // 입력이 잘못되면 비어 있는 배열을 반환한다.
+    }
+}
+```
+
+개선될 점을 대략 파악하면 다음과 같다.
+- 너무 많은 정보 (헤더에 역사설명 부분)
+    + `... 에라스토테네소: 기원전 276년에 리비아 키레네에서 출생 ...` 등
+- 의무적으로 다는 Javadocs 주석
+    + `... @author 홍길동 ...` 등
+- 모호한 class 명
+    + `GeneratePrimes` 보다는 `Generator` 가 좀 더 명시적
+- 코드가 바뀌면 덩달아 바뀌어야 하는 주석들
+    + `... @param maxValue 는 소수를 찾아낼 최대 값 ...`
+- 모호한 변수 네이밍
+    + `int s = ...`
+    + `boolean[] f = ...`
+    + `int count = ...` 등
+- 명시적인 함수로 대체
+    + `... if (maxValue >= 2) // 유일하게 유효한 경우 ...` 등
+    + `generatePrimes()` 메서드 내 대부분은 함수로 쪼개야 한다. (함수가 여러가지 일을 함)
+- 증복된 내용
+    + `... count++; // 카운트 증가 ...` 등
+
+위와 같은 문제점들을 리팩터링 해보자.  
+
+<br/>
+
+**리팩터링 결과**
+
+```java
+/**
+ * 이 클래스는 사용자가 지정한 최대 값까지 소수를 구한다.
+ * 알고르짐은 에라스토테네스의 체다.
+ * 2에서 시작하는 정수 배열을 대상으로 작업한다.
+ * 처음으로 남아 있는 정수를 찾아 배수를 모두 제거한다.
+ * 배열에 더 이상 배수가 없을 때까지 반복한다.
+ */
+
+public class PrimeGenerator {
+    
+    private static boolean[] crossedOut;
+    private static int[] result;
+    
+    public static int[] generatePrimes(int maxValue) {
+        if (maxValue < 2)
+            return new int[0];
+        else {
+            uncrossIntegersUpTo(maxValue);
+            crossOutMultiples();
+            putUncrossedIntegersIntoResult();
+            return result;
+        }
+    }
+    
+    private static void uncrossIntegersUpTo(int maxValue) {
+        crossedOut = new boolean[maxValue + 1];
+        for (int i = 2; i < crossedOut.length; i++)
+            crossedOut[i] = false;
+    }
+    
+    private static void crossOutMultiples() {
+        int limit = determineIterationLimit();
+        for (int i = 2; i <= limit; i++) {
+            if (notCrossed(i))
+                crossOutMultiplesOf(i);
+        }
+    }
+    
+    private static int determineIterationLimit() {
+        // 배열에 있는 모든 배수는 배열 크기의 제곱근보다 작은 소수의 인수다.
+        // 따라서 이 제곱근보다 더 큰 숫자의 배수는 제거할 필요가 없다.
+        double iterationLimit = Math.sqrt(crossedOut.length);
+        return (int) iterationLimit;
+    }
+    
+    private static boolean notCrossed(int i) {
+        return crossedOut[i] == false;
+    }
+    
+    private static void putUncrossedIntegersIntoResult() {
+        result = new int[numberOfUncrossedIntegers()];
+        for (int j = 0, i = 2; i < crossedOut.length; i++)
+            if (notCrossed(i))
+                result[j++] = i;
+    }
+    
+    private static int numberOfUncrossedIntegers() {
+        int count = 0;
+        for (int i = 2; i < crossedOut.length; i++)
+            if (notCrossed(i))
+                count++;
+        
+        return count;
+    }
+}
+```
+
+<br/>
 
 [ [← back](https://github.com/cholnh/study-cs/blob/main/post/books/index.md#개발-서적) | [↑ top](https://github.com/cholnh/study-cs/blob/main/post/books/cleancode/index.md#clean-code) ]
 
