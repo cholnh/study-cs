@@ -90,7 +90,7 @@ Service Discovery, API Gateway, Orchestration, Choreography, Context Boundary �
     + 스프링 클라우드 시큐리티
     + OAuth2, JWT
 
-|<img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/msa/msa-secyrity-pattern.jpg" width="700"/>|
+|<img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/msa/msa-security-pattern.jpg" width="700"/>|
 |-|
 |그림 3 - 보안 패턴|
 
