@@ -65,7 +65,7 @@ Service Discovery, API Gateway, Orchestration, Choreography, Context Boundary �
           
 |<img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/msa/msa-routing-pattern.jpg" width="700"/>|
 |-|
-|그림 1|
+|그림 1- 라우팅 패턴|
 
 <br/>
 
@@ -82,7 +82,7 @@ Service Discovery, API Gateway, Orchestration, Choreography, Context Boundary �
 
 |<img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/msa/msa-mediation-pattern.jpg" width="700"/>|
 |-|
-|그림 2|
+|그림 2 - 회복성 패턴|
 
 <br/>
 
@@ -92,7 +92,7 @@ Service Discovery, API Gateway, Orchestration, Choreography, Context Boundary �
 
 |<img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/msa/msa-secyrity-pattern.jpg" width="700"/>|
 |-|
-|그림 3|
+|그림 3 - 보안 패턴|
 
 <br/>
 
@@ -104,7 +104,7 @@ Service Discovery, API Gateway, Orchestration, Choreography, Context Boundary �
 
 |<img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/msa/msa-log-pattern.jpg" width="700"/>|
 |-|
-|그림 4|
+|그림 4 - 로그 패턴|
 
 <br/>
 
@@ -122,7 +122,7 @@ Service Discovery, API Gateway, Orchestration, Choreography, Context Boundary �
 
 |<img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/msa/msa-deploy-pattern.jpg" width="700"/>|
 |-|
-|그림 5|
+|그림 5 - 빌드/배포 패턴|
 
 <br/>
 
