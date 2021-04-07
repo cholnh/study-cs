@@ -343,4 +343,32 @@ Pod, Service 등은 네임스페이스 별로 생성/관리 된다. (사용자 �
     + 물론 네트워크 정책으로 통신을 막기도 가능.  
     + 높은 수준의 분리 정책을 원하면 클러스터 자체를 분리하라.
     
+<br/>
+
+**컨트롤러**  
+기본 오브젝트 생성/관리를 책임.  
+
+- RC (Replication Controller)
+    + Pod 관리/기동
+    + Selector  
+        : 라벨을 기반으로 RC 가 관리하는 Pod 를 가져온다.
+    + Replica 수  
+        : RC 가 관리하는 Pod 수. 이 숫자만큼 Pod 가 유지된다.
+    + Pod Template  
+        : Pod 를 추가로 기동할 때 필요한 Pod 정보 (도커이미지, 포트, 라벨 등)
+
+|<img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/msa/msa-kube-rc-1.jpg" width="700"/>|
+|-|
+|그림 7 - RC|
+
+<br/>
+
+- Replica Set
+    + RC 의 새버전 (Set 기반 Selector)
+
+- Deployment
+    + RC 추상화 개념 (실제 운영에서 사용됨)
+    
+<br/> 
+    
 [ [← back](https://github.com/cholnh/study-cs#-MSA-) | [↑ top](https://github.com/cholnh/study-cs/blob/main/post/question/msa/index.md#MSA) ]
