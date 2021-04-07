@@ -308,5 +308,39 @@ spec:
 - Service 는 label selector 를 사용하여 위 문제를 해결한다.
 
 <br/>
+
+**라벨/라벨 셀렉터**  
+- 라벨
+    + 리소스를 선택하는 기준 (키/값 쌍)
+    + 각 리소스는 라벨을 갖는다.
+    + ex) 
+        + 특정 리소스만 배포 가능, 업데이트 가능
+        + Service 에 Pod 연결
+        + 특정 리소스만 네트워크 접근 권한 부여 등
+- 라벨 셀렉터
+    + 라벨링된 리소스를 선택한다.
+        + Equality Based Selector  
+            (=, != 조건으로 리소스 선택)
+        + Set Based Selector  
+            (집합개념 in, notin 조건으로 리소스 선택)
+
+<br/>
+
+**Namespace**  
+한 쿠버네티스 클러스터 내의 논리적인 분리 단위이다.  
+Pod, Service 등은 네임스페이스 별로 생성/관리 된다. (사용자 권한 부여도 가능)  
+
+|<img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/msa/msa-kube-namespace-1.jpg" width="700"/>|
+|-|
+|그림 6 - Namespace|
+
+<br/>
+
+- 사용자 별 접근 권한을 다르게 할 수 있다.
+- 네임스페이스 별로 리소스의 쿼타(할당량) 지정 가능
+- 네임스페이스 별로 리소스를 나눠서 관리할 수 있다. (Pod, Service 등)
+- (논리적 분리 이기에) 다른 네임스페이스 간 Pod 라도 통신이 가능하다.  
+    + 물론 네트워크 정책으로 통신을 막기도 가능.  
+    + 높은 수준의 분리 정책을 원하면 클러스터 자체를 분리하라.
     
 [ [← back](https://github.com/cholnh/study-cs#-MSA-) | [↑ top](https://github.com/cholnh/study-cs/blob/main/post/question/msa/index.md#MSA) ]
