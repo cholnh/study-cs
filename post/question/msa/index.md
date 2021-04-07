@@ -270,6 +270,11 @@ Pod 는 다음과 같은 특성이 있다.
 |-|
 |그림 4 - Volume|
 
+- `htdocs` 볼륩은 web server 컨테이너와 content manager 컨테이너에 마운트 됨.
+- `logs` 볼륨은 logger 컨테이너와 web server 컨테이너에 마운트 됨.
+
+<br/>
+
 
 
     
