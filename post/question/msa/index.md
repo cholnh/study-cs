@@ -275,7 +275,38 @@ Pod 는 다음과 같은 특성이 있다.
 
 <br/>
 
+**Service**  
+여러 Pod 를 하나의 IP 와 PORT 로 묶어서 서비스를 제공한다. (+ 부하분산)  
 
+|<img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/msa/msa-kube-service-1.jpg" width="700"/>|
+|-|
+|그림 5 - Service|
 
+<br/>
+
+```yaml
+kind: service
+apiVersion: v1
+metadata:
+    name: my-service
+spec:
+    selector:
+      app: myapp        # 라벨 셀렉터에서 라벨 이름이 myapp 인 pod 를 선택
+    ports:
+      -protocol: TCP
+      port: 80          # 서비스는 80 포트 사용
+      targetPort: 9376  # 80 포트에 들어온 요청을 컨테이너 9376 포트에 연결
+```
+
+<br/>
+
+**Why 로드벨런서가 아니고 Service 인가**
+- Pod 의 경우 동적으로 생성된다. (Auto Scaling)  
+    -> 로드벨런서에 등록/삭제 빈번함
+- 장애가 생기면 자동으로 리스타팅 되면서 IP 가 변경됨  
+    -> 로드벨런서에 IP 등록이 어려움
+- Service 는 label selector 를 사용하여 위 문제를 해결한다.
+
+<br/>
     
 [ [← back](https://github.com/cholnh/study-cs#-MSA-) | [↑ top](https://github.com/cholnh/study-cs/blob/main/post/question/msa/index.md#MSA) ]
