@@ -255,7 +255,20 @@ Pod 는 다음과 같은 특성이 있다.
 
 <br/>
 
+**Volume**  
+- Pod 의 경우 기동할 때 Container 마다 로컨 디스크를 생성한다.  
+    (영구적 디스크 x, 컨테이너 리스타트 시 초기화)  
+    DB 같이 영구적 저장을 위해서 스토리지 볼륨에 저장한다.
+- Pod 가 기동할 때 Container 에 마운트 해서 사용한다.
 
+아래와 같은 시나리오에서 볼륨이 사용된다.  
+- web server 컨테이너는 `/htdocs` 디렉터리의 컨테이너를 서비스 하고, `/logs` 디렉토리에 웹 로그를 기록한다.
+- content manager 컨테이너는 `/htdocs` 디렉터리에 컨텐츠를 업데이트 및 관리한다.
+- logger 컨테이너는 `/logs` 디렉터리 내 로그를 수집한다. 
+
+|<img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/msa/msa-kube-volume-1.jpg" width="700"/>|
+|-|
+|그림 4 - Volume|
 
 
 
