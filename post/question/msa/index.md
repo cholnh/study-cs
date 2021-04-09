@@ -154,6 +154,9 @@ Service Discovery, API Gateway, Orchestration, Choreography, Context Boundary �
 
 ## 도커
 
+도커는 Linux 기반의 Container RunTime 오픈소스이다.  
+
+
 [ [← back](https://github.com/cholnh/study-cs#-MSA-) | [↑ top](https://github.com/cholnh/study-cs/blob/main/post/question/msa/index.md#MSA) ]
 
 <br/>
