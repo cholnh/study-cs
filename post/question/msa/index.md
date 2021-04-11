@@ -70,7 +70,7 @@ Service Discovery, API Gateway, Orchestration, Choreography, Context Boundary �
           
 |<img src="https://github.com/cholnh/study-cs/blob/main/assets/images/question/msa/msa-routing-pattern.jpg" width="700"/>|
 |-|
-|그림 1- 라우팅 패턴|
+|그림 1 - 라우팅 패턴|
 
 <br/>
 
