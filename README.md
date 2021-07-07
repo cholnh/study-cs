@@ -38,6 +38,9 @@
               </a>
             </td>
             <td width="20%">
+              <a href="https://github.com/cholnh/delivery-platform-server-guide#배달-서비스-플랫폼-api-서버-가이드">
+                <img src="/assets/images/cs/tn-tdd-msa.jpg" width="100%" />
+              </a>
             </td>
             <td width="20%">
             </td>
@@ -59,6 +62,9 @@
               </a>
             </td>
             <td width="20%">
+              <a href="https://github.com/cholnh/delivery-platform-server-guide#배달-서비스-플랫폼-api-서버-가이드">
+                도메인 주도 설계로 시작하는 마이크로서비스 개발
+              </a>
             </td>
             <td width="20%">
             </td>
