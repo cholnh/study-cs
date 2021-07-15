@@ -1,5 +1,10 @@
+## DevOps
+- [CI/CD](#cicd)
+- [빌드/배포 파이프라인 설계](#빌드배포-파이프라인-설계)
+
+[ [← back](https://github.com/cholnh/study-cs#-devops-) ]
+
 ## CI/CD
-[ [← back](https://github.com/cholnh/study-cs#-cicd-) ]
 
 마이크로 서비스를 (자동으로) 빌드하고 테스트한 뒤 배포할 수 있게 도와주는 개발 지원 환경을 데브옵스(DevOps)환경이라 합니다.  
 (보통 개발+운영 을 병행하는 조직 또는 문화를 뜻하는데, 여기서는 자동화 환경의 의미로 사용하겠습니다)
@@ -33,7 +38,7 @@
 
 <br/>
 
-### 빌드/배포 파이프라인 설계
+## 빌드/배포 파이프라인 설계
 빌드/배포 과정 동안 수행해야 할 테스크가 정의된 것을 빌드/배포 파이프라인이라고 합니다.  
 
 <br/>
@@ -49,4 +54,4 @@
 
 <br/>
 
-[ [← back](https://github.com/cholnh/study-cs#-cicd-) | [↑ top](https://github.com/cholnh/study-cs/blob/main/post/question/cicd/index.md#ci-cd) ]
+[ [← back](https://github.com/cholnh/study-cs#-devops-) | [↑ top](https://github.com/cholnh/study-cs/blob/main/post/question/cicd/index.md#devops) ]

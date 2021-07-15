@@ -309,7 +309,9 @@
 
 ---
 
-### [[ CI/CD ]](https://github.com/cholnh/study-cs/blob/main/post/question/cicd/index.md)
+### [[ DevOps ]](https://github.com/cholnh/study-cs/blob/main/post/question/cicd/index.md)
+- [CI/CD](https://github.com/cholnh/study-cs/blob/main/post/question/cicd/index.md#cicd)
+- [빌드/배포 파이프라인 설계](https://github.com/cholnh/study-cs/blob/main/post/question/cicd/index.md#빌드배포-파이프라인-설계)
 
 [ [↑ top](https://github.com/cholnh/study-cs#Intro) ]
 
