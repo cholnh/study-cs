@@ -1801,6 +1801,218 @@ BufferedOutputStream bos = ctxt.createScratchFileStream(classFileName);
 
 ## 7장 오류 처리
 
+<br/>
+
+> 오류 처리 코드로 인해 프로그램 논리를 이해하기 어려워진다면 깨끗한 코드라 부르기 어렵다.
+
+### 오류 코드보다 예외를 사용하라
+
+`if` 분기문으로 오류 코드를 핸들링하는 지저분한 코드보다 예외를 사용한 코드는 훨씬 깔끔하다.  
+논리가 오류 처리 코드와 뒤섞이지 않게 된다.
+
+```java
+public class DeviceController {
+    ...
+    
+    public void sendShutDown() {
+        try {
+            tryToShutDown();
+        } catch (DeviceShutDownError e) {
+            logger.log(e);
+        }
+    }
+    
+    private void tryToShutDown() throws DeviceShutDownError {
+        DeviceHandle handle = getHandle(DEV1);
+        DeviceRecord record = retrieveDeviceRecord(handle);
+        
+        ...
+    }
+    
+    private DeviceHandle getHandle(DeviceID id) {
+        ...
+        throw new DeviceShutDownError("Invalid handle for: " + id.toString());
+    }
+}
+```
+
+<br/>
+
+### Try-Catch-Finally 문부터 작성하라
+
+어떤 면에서 try 블록은 트랜잭션과 비슷하다. try 블록에서 무슨 일이 생기든지
+catch 블록은 프로그램 상태를 일관성 있게 유지해야 한다.
+그러므로 예외가 발생할 코드를 짤 때는 try-catch-finally 문으로 시작하는 편이 낫다.
+그러면 try 블록에서 무슨 일이 생기든지 호출자가 기대하는 상태를 정의하기 쉬워진다.
+
+<br/>
+
+### 미확인(unchecked) 예외를 사용하라
+
+확인 예외랑 메서드를 선언할 때 메서드가 반환할 예외를 모두 열거하는 것이다.
+즉 메서드가 반환하는 예외는 메서드 유형의 일부인 것이다.
+예전에는 확인된 예외를 멋진 아이디어라 생각했지만, 확인된 오류가 치르는 비용에 상응하는 이익을 제공하지는 않는다.
+
+- 확인된 예외는 OCP(Open Closed Principle)를 위반한다.  
+  메서드에서 확인된 예외를 던져쓴ㄴ데 catch 블록이 세 단계 위에 있다면,
+  그 사이 메서드 모두가 선언부에 해당 예외를 정의해야 한다.
+  즉, 하위 단계에서 코드를 변경하면 상위 단계 메서드 선언부를 전부 고쳐야 한다는 말이다.
+- throws 경로에 위치하는 모든 함수가 최하위 함수에서 던지는 예외를 알아야 하므로 캡슐화가 깨진다.
+
+<br/>
+
+### 예외에 의미를 제공하라
+
+예외를 던질 때 전후 상황을 충분히 덧붙인다. (오류 발생 원인 및 위치 등)  
+코드의 의도를 파악하려면 호출 스택만으로 부족하다.  
+(실패한 연산 이름과 실패 유형을 언급하면 충분한 단서가 된다)
+
+<br/>
+
+### 호출자를 고려해 예외 클래스를 정의하라
+
+어플리케이션에서 오류를 정의할 때 프로그래머에게 가장 중요한 관심사는 오류를 잡아내는 방법이 되어야 한다.  
+다음은 오류를 형편없이 분류한 사례이다.
+
+```java
+ACMEPort port = new ACMEPort(12);
+
+try {
+    port.open();
+} catch (DeviceResponseException e) {
+    ...
+} catch (ATM1212UnlockedException e) {
+    ...
+} catch (GMXException e) {
+    ...
+} finally {
+    ...
+}
+```
+
+> 우리는 대다수 상황에서 오류를 처리하는 방식이 비슷하다.
+> 오류를 기록하고, 프로그램을 계속 수행해도 좋은지 확인하고...
+> 즉 예외에 대응하는 방식이 예외 유형과 무관하게 거의 동일하다.
+
+위와 같은 코드를 **클래스로 감싸(Wrapper)면서 예외 유형 하나만을 반환** 해보자.
+
+```java
+LocalPort port = new LocalPort(12);
+try {
+    port.open();
+} catch (PortDeviceFailure e) {
+    ...
+} finally {
+    ...
+}
+```
+
+아래는 단순히 `ACMEPort` 클래스가 던지는 예외를 잡아 변환하는 Wrapper 클래스이다.
+
+```java
+public class LocalPort {
+    private ACMEPort innerPort;
+    
+    public LocalPort(int portNumber) {
+        innerPort = new ACMEPort(portNumber);
+    }
+    
+    public void open() {
+        try {
+            port.open();
+        } catch (DeviceResponseException e) {
+            throw new PortDeviceFailure(e);
+        } catch (ATM1212UnlockedException e) {
+            throw new PortDeviceFailure(e);
+        } catch (GMXException e) {
+            throw new PortDeviceFailure(e);
+        }
+    }
+}
+```
+
+실제로 외부 API를 사용할 떄는 감싸기 기법이 최선이다.  
+외부 API와의 의존성이 크게 줄어들고 테스트하기도 쉬워진다.
+
+<br/>
+
+### 정상 흐름을 정의하라
+
+다음은 비용 청구 어플리케이션에서 총계를 계산하는 허술한 코드이다.
+
+```java
+try {
+    MealExpenses expenses = expenseReportDAO.getMeals(employee.getID());
+    m_total += expenses.getTotal();
+} catch(MealExpensesNotFound e) {
+    m_total += getMealPerDiem();
+}
+```
+
+위 코드를 보면 예외에 정의된 코드가 본 흐름의 논리를 따라가기 어렵게 만든다.  
+특수 상황을 처리할 필요가 없다면 더 좋은 코드가 될 것이다.  
+`ExpenseReportDAO` 를 고쳐 언제나 `MealExpenses` 객체를 반환하게 변경해보자.
+
+```java
+public class PerDiemMealExpenses implements MealExpenses {
+    public int getTotal() {
+        // 기본값으로 일일 기본 식비를 반환함.
+    }
+}
+```
+
+위와같은 코드를 통해 특수 상황을 처리하게 된다면 다음과 같이 코드가 간결해진다.
+
+```java
+MealExpenses expenses = expenseReportDAO.getMeals(employee.getID());
+m_total += expenses.getTotal();
+```
+
+이를 특수 사례 패턴(Special case Pattern)이라 부른다.  
+(클래스를 만들거나 객체를 조작해 특수 사례를 처리하는 방식이다)
+
+<br/>
+
+### null을 반환하지 마라
+
+null을 반환하는 코드는 일거리를 늘릴 뿐만 아니라 호출자에게 문제를 떠넘긴다.  
+누구 하나라도 null 확인을 빼먹는다면 어플리케이션이 통제 불능에 빠질지도 모른다.
+
+- 메서드에서 null을 반환하고픈 유혹이 든다면 그 대신 예외를 던지거나 특수 사례 객체를 반환한다.
+- 사용하려는 외부 API가 null을 반환한다면 감싸기 메서드를 구현해 예외를 던지거나 특수 사례 객체를 반환하는 방식을 고려한다.
+
+```java
+List<Employee> employees = getEmployees();
+if (employees != null) {
+    for (Employee e : employees) {
+        ...
+    }
+}
+```
+
+위와 같이 null을 반환하기 보다는 빈 리스트를 반환한다면 코드가 훨씬 깔끔해진다.  
+(자바의 `Collections.emptyList()`를 활용할 수 있다)
+
+```java
+public List<Employee> getEmployees() {
+    if (...직원이 없다면...) {
+        return Collections.emptyList();
+    }
+}
+```
+
+<br/>
+
+### null을 전달하지 마라
+
+메서드로 null을 전달하는 방식은 더 나쁘다.  
+애초에 null을 넘기지 못하도록 금지하는 정책이 합리적이다.  
+정책이 마련되지 않았다면
+
+- null인자가 들어올 시, 새로운 예외 유형을 만들어 던진다.
+- assert 문을 사용한다.
+
+<br/>
 
 
 [ [← back](https://github.com/cholnh/study-cs/blob/main/post/books/index.md#개발-서적) | [↑ top](https://github.com/cholnh/study-cs/blob/main/post/books/cleancode/index.md#clean-code) ]
